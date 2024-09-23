@@ -1,0 +1,65 @@
+{
+  "name": "simplicity-css",
+  "version": "1.0.0",
+  "description": "simplicity-css es una biblioteca CSS minimalista, completa y altamente personalizable diseñada para proporcionar un conjunto sólido de estilos iniciales que aceleran el desarrollo web al tiempo que garantizan la adaptabilidad y la facilidad de uso.",
+  "main": "dist/simplicity.css",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer --no-map.inline --autoprefixer.browsers \"last 1 versions\" -r \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+    "sass:compile": "sass --no-source-map --style=expanded src:dist/css",
+    "sass:watch": "sass --watch --no-source-map --style=expanded src:dist/css",
+    "sass:minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
+    "sass:prettier": "npx prettier --write \"**/*.scss\"",
+    "build:sass": "npm-run-all sass:compile autoprefixer sass:minify",
+    "build": "npm-run-all build:sass",
+    "start": "concurrently \"npm run sass:watch\" \"browser-sync start --config bs-config.cjs\"",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaserafin/simplicity-css.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "responsive",
+    "frontend",
+    "web design"
+  ],
+  "author": "Zaserafin <contacto@zaserafin.com>",
+  "license": "MIT",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not < 0.5%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.2",
+    "clean-css-cli": "^5.6.3",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.11.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
+    "npm-run-all2": "^6.2.3",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.79.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.scss": [
+      "prettier --write"
+    ]
+  }
+}
