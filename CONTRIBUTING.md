@@ -13,6 +13,55 @@ Agradecemos tu interés en contribuir a simplicity-css. Tu ayuda es fundamental 
 5. **Prueba tus Cambios**: Asegúrate de que tus cambios no introduzcan errores y cumplan con los estándares establecidos.
 6. **Envía un Pull Request**: Cuando estés listo, envía un pull request desde tu fork hacia el repositorio principal para su revisión.
 
+## Estándares para Commits y Ramas
+
+### Commits
+
+Para mantener un historial de commits claro y consistente, utiliza el siguiente formato:
+
+**[tipo]: [descripción]**
+
+Tipos de commits comunes:
+
+- **feat**: Nueva funcionalidad.
+- **fix**: Corrección de errores.
+- **refactor**: Refactorización de código sin cambiar la funcionalidad.
+- **style**: Cambios en estilos (formato, ortografía, etc.).
+- **docs**: Actualización de documentación.
+- **test**: Añadir o modificar pruebas.
+- **chore**: Tareas de mantenimiento (actualización de dependencias, configuraciones).
+
+**Ejemplos de commits:**
+
+- `feat: added new grid system for responsive layout`
+- `fix: corrected button alignment issue on mobile`
+- `refactor: optimized SCSS mixins for better performance`
+- `docs: updated README with installation instructions`
+
+---
+
+### Ramas
+
+Las ramas deben seguir el formato:
+
+**[tipo]/[descripción-corta]**
+
+Tipos de ramas comunes:
+
+- **feature/**: Para nuevas funcionalidades.
+- **bugfix/**: Para corrección de errores.
+- **hotfix/**: Para arreglos urgentes en producción.
+- **refactor/**: Para mejoras de código sin cambiar la funcionalidad.
+- **docs/**: Para actualizaciones de documentación.
+
+**Ejemplos de ramas:**
+
+- `feature/grid-system`
+- `bugfix/button-alignment`
+- `hotfix/navigation-bug`
+- `refactor/mixins-optimization`
+- `docs/update-contributing-guide`
+
 ### Estándares de Código para CSS y SCSS
 
 #### Generalidades
