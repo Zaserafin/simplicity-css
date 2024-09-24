@@ -1,0 +1,68 @@
+// ========================================================================
+// Base and global styles applied across the entire library.
+// ========================================================================
+
+html {
+  // Sets the root box-sizing value for consistent element sizing.
+  box-sizing: border-box;
+
+  // Defines the root font size for consistent typography scaling.
+  font-size: #{$font-size-root};
+}
+
+body {
+  // Base font settings for the body.
+  font-family: #{$font-family-base};
+  font-size: #{$font-size-base};
+  font-weight: #{$font-weight-base};
+  letter-spacing: #{$letter-spacing-base};
+  line-height: #{$line-height-base};
+  color: #{$body-text-color};
+  background-color: #{$body-bg-color};
+}
+
+*,
+*::before,
+*::after {
+  // Inherits box-sizing from parent elements for flexible adjustments.
+  box-sizing: inherit;
+
+  // Inherits text color from parent elements for easy customization.
+  color: inherit;
+
+  margin: 0;
+  padding: 0;
+
+  // Ensures all elements have a consistent scrollbar style across the framework.
+  scrollbar-width: #{$scrollbar-size};
+  scrollbar-color: #{$scrollbar-thumb-color} #{$scrollbar-bg-color};
+
+  // Toggles text selection based on the configuration to prevent unwanted behavior.
+  @if $enable-user-select == false {
+    user-select: none !important;
+  }
+}
+
+// Ensures images are fluid and scale while preserving aspect ratio.
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+// Ensures table captions are placed at the bottom and borders are collapsed for clean presentation.
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+// Adds spacing between sections for better visual separation.
+section {
+  margin: 1rem 0;
+}
+
+// Applies the code font family for code and preformatted text blocks.
+code,
+pre {
+  font-family: #{$font-family-code};
+}

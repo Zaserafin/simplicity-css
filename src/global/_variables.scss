@@ -1,0 +1,106 @@
+// =================================================
+// General Configurations
+// =================================================
+
+// Prefix used for CSS custom properties
+$css-var-prefix: simpl;
+
+// Toggle to allow or disable text selection for users
+$enable-user-select: false;
+
+// =================================================
+// Typography
+// =================================================
+
+// Root font size of 10px, making 1rem = 10px
+$font-size-root: 10px;
+
+// Base font size for body text
+$font-size-base: 1.6rem;
+
+// Font family for standard text
+$font-family-base: "Helvetica Neue", Arial, sans-serif;
+
+// Font family for code blocks
+$font-family-code: "Courier New", Courier, monospace;
+
+// Base font weight for text
+$font-weight-base: 300;
+
+// Standard letter spacing for body text
+$letter-spacing-base: 0.01rem;
+
+// Base line height for text
+$line-height-base: 1.5;
+
+// =================================================
+// Color System
+// =================================================
+
+// Opacity scale ranging from 0% to 100%
+$opacities: (
+  0: 0,
+  10: 0.1,
+  20: 0.2,
+  30: 0.3,
+  40: 0.4,
+  50: 0.5,
+  60: 0.6,
+  70: 0.7,
+  80: 0.8,
+  90: 0.9,
+  100: 1
+);
+
+// Core color palette
+$primary: #19c985;
+$secondary: #6c757d;
+$tertiary: #ffc107;
+$quaternary: #17a2b8;
+$warning: #dc3545;
+$danger: #ff0000;
+$success: #28a745;
+$dark: #343a40;
+$light: #f8f9fa;
+$black: #1f1f1f;
+$white: #f1f1f1;
+
+// Color map for easier access to palette
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+  quaternary: $quaternary,
+  warning: $warning,
+  danger: $danger,
+  success: $success,
+  dark: $dark,
+  light: $light
+);
+
+// Default text and background colors
+$text-color: $dark !default;
+$bg-color: $light !default;
+
+// =================================================
+// Body Styling Variables
+// =================================================
+
+// Default body text color
+$body-text-color: $dark !default;
+
+// Default body background color
+$body-bg-color: $light !default;
+
+// =================================================
+// Scrollbar Styling
+// =================================================
+
+// Scrollbar width and style
+$scrollbar-size: thin;
+
+// Thumb color for scrollbar
+$scrollbar-thumb-color: $primary;
+
+// Background color for scrollbar track
+$scrollbar-bg-color: transparent;
