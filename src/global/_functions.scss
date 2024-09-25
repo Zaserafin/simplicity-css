@@ -1,0 +1,22 @@
+// ====================================================
+// Function: convert-to-rgb
+// Description: Converts a color value to its red, green, and blue (RGB) components.
+// Parameters:
+//   - $value: The color to be converted (supports hex, rgb, or named colors).
+// Returns: A comma-separated list of the red, green, and blue values of the color in that order.
+// ====================================================
+@function convert-to-rgb($value) {
+  @return red($value), green($value), blue($value);
+}
+
+// ====================================================
+// Function: css-variable-reference
+// Description: Generates a CSS variable string with an optional prefix.
+// Parameters:
+//   - $name: The name of the CSS variable to generate.
+//   - $prefix (optional): The prefix for the CSS variable. Defaults to the global $css-var-prefix.
+// Returns: A string representing the CSS variable in the format --[prefix]-[name].
+// ====================================================
+@function css-variable-reference($name, $prefix: $css-var-prefix) {
+  @return --#{$prefix}-#{$name};
+}
