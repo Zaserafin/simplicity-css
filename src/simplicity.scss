@@ -4,8 +4,12 @@
 
 @import "./global/variables";
 
+@import "./global/functions";
+
 // =================================================
 // Import base styles and global resets
 // =================================================
+
+@import "./root";
 
 @import "./base";

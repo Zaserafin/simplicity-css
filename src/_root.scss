@@ -1,0 +1,44 @@
+// ====================================================
+// Root CSS Variables
+// Description: Defines the root-level CSS variables for the library,
+// including typography, scrollbar styles, and color palette variables.
+// The variables are dynamically generated using the css-variable-reference
+// function, ensuring consistency and flexibility with the project-specific
+// prefix for better isolation and customization.
+// ====================================================
+
+:root {
+  // Enable support for light and dark color schemes.
+  color-scheme: light;
+
+  // Typography settings
+  #{css-variable-reference(font-size-root)}: #{$font-size-root};
+  #{css-variable-reference(font-size-base)}: #{$font-size-base};
+  #{css-variable-reference(font-family-base)}: #{$font-family-base};
+  #{css-variable-reference(font-family-code)}: #{$font-family-code};
+  #{css-variable-reference(font-weight-base)}: #{$font-weight-base};
+  #{css-variable-reference(letter-spacing-base)}: #{$letter-spacing-base};
+  #{css-variable-reference(line-height-base)}: #{$line-height-base};
+
+  // Scrollbar settings
+  #{css-variable-reference(scrollbar-size)}: #{$scrollbar-size};
+  #{css-variable-reference(scrollbar-thumb-color)}: #{$scrollbar-thumb-color};
+  #{css-variable-reference(scrollbar-bg-color)}: #{$scrollbar-bg-color};
+
+  // Color palette and RGB equivalents
+  @each $name, $color in $colors {
+    #{css-variable-reference($name)}: #{$color};
+    #{css-variable-reference($name)}-rgb: #{convert-to-rgb(
+        $color
+      )}; // Define RGB variant for the color
+  }
+
+  // Opacity scale
+  @each $name, $opacity in $opacities {
+    #{css-variable-reference(opacity-#{$name})}: #{$opacity};
+  }
+
+  // Body styling
+  #{css-variable-reference(body-color)}: #{$body-text-color};
+  #{css-variable-reference(body-background)}: #{$body-bg-color};
+}
