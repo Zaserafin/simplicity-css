@@ -7,17 +7,16 @@
 .fluid-container,
 .container {
   // Set gutter sizes using CSS variables for consistent spacing
-  --#{css-variable-reference(gutter-x)}: #{calc($container-padding-x * 0.5)}; // Horizontal gutter (half of padding)
-  --#{css-variable-reference(gutter-y)}: #{calc($container-padding-y * 0.5)}; // Vertical gutter (half of padding)
+  #{generate-css-variable-name(gutter-x)}: #{calc($container-padding-x * 0.5)}; // Horizontal gutter (half of padding)
+  #{generate-css-variable-name(gutter-y)}: #{calc($container-padding-y * 0.5)}; // Vertical gutter (half of padding)
 
   // Set default max width (100% for fluid containers)
-  --#{css-variable-reference(max-width)}: 100%;
+  #{generate-css-variable-name(max-width)}: 100%;
 
   // Container settings
   width: 100%;
-  max-width: var(#{css-variable-reference(max-width)});
-  padding: var(#{css-variable-reference(gutter-y)})
-    var(#{css-variable-reference(gutter-x)});
+  max-width: #{use-css-variable(max-width)};
+  padding: #{use-css-variable(gutter-y)} #{use-css-variable(gutter-x)};
   margin: 0 auto; // Center the container
 }
 
@@ -30,7 +29,7 @@
   @each $breakpoint, $container-max-width in $container-sizes {
     @media (min-width: #{$container-max-width}) {
       // Update max-width for each breakpoint using CSS variables
-      --#{$css-var-prefix}-max-width: #{$container-max-width};
+      #{generate-css-variable-name(max-width)}: #{$container-max-width};
     }
   }
 }

@@ -7,18 +7,18 @@ html {
   box-sizing: border-box;
 
   // Defines the root font size for consistent typography scaling.
-  font-size: var(#{css-variable-reference(font-size-root)});
+  font-size: #{use-css-variable(font-size-root)};
 }
 
 body {
   // Base font settings for the body.
-  font-family: var(#{css-variable-reference(font-family-base)});
-  font-size: var(#{css-variable-reference(font-size-base)});
-  font-weight: var(#{css-variable-reference(font-weight-base)});
-  letter-spacing: var(#{css-variable-reference(letter-spacing-base)});
-  line-height: var(#{css-variable-reference(line-height-base)});
-  color: var(#{css-variable-reference(body-color)});
-  background-color: var(#{css-variable-reference(body-background)});
+  font-family: #{use-css-variable(font-family-base)};
+  font-size: #{use-css-variable(font-size-base)};
+  font-weight: #{use-css-variable(font-weight-base)};
+  letter-spacing: #{use-css-variable(letter-spacing-base)};
+  line-height: #{use-css-variable(line-height-base)};
+  color: #{use-css-variable(body-color)};
+  background-color: #{use-css-variable(body-background)};
 }
 
 *,
@@ -34,9 +34,8 @@ body {
   padding: 0;
 
   // Ensures all elements have a consistent scrollbar style across the framework.
-  scrollbar-width: var(#{css-variable-reference($scrollbar-size)});
-  scrollbar-color: var(#{css-variable-reference($scrollbar-thumb-color)})
-    var(#{css-variable-reference($scrollbar-bg-color)});
+  scrollbar-width: #{use-css-variable(scrollbar-size)};
+  scrollbar-color: #{use-css-variable(scrollbar-thumb-color)} #{use-css-variable(scrollbar-bg-color)};
 
   // Toggles text selection based on the configuration to prevent unwanted behavior.
   @if $enable-user-select == false {
@@ -65,5 +64,5 @@ section {
 // Applies the code font family for code and preformatted text blocks.
 code,
 pre {
-  font-family: var(#{css-variable-reference($font-family-code)});
+  font-family: #{use-css-variable(font-family-code)};
 }

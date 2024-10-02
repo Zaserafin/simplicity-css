@@ -10,13 +10,25 @@
 }
 
 // ====================================================
-// Function: css-variable-reference
-// Description: Generates a CSS variable string with an optional prefix.
+// Function: generate-css-variable-name
+// Description: Generates the name of a CSS variable with an optional prefix.
 // Parameters:
 //   - $name: The name of the CSS variable to generate.
 //   - $prefix (optional): The prefix for the CSS variable. Defaults to the global $css-var-prefix.
-// Returns: A string representing the CSS variable in the format --[prefix]-[name].
+// Returns: A string representing the CSS variable name in the format --[prefix]-[name].
 // ====================================================
-@function css-variable-reference($name, $prefix: $css-var-prefix) {
+@function generate-css-variable-name($name, $prefix: $css-var-prefix) {
   @return --#{$prefix}-#{$name};
+}
+
+// ====================================================
+// Function: use-css-variable
+// Description: Generates a var() usage string for a CSS variable with an optional prefix.
+// Parameters:
+//   - $name: The name of the CSS variable to use.
+//   - $prefix (optional): The prefix for the CSS variable. Defaults to the global $css-var-prefix.
+// Returns: A string representing the var() function with the CSS variable in use.
+// ====================================================
+@function use-css-variable($name, $prefix: $css-var-prefix) {
+  @return var(#{generate-css-variable-name($name, $prefix)});
 }
