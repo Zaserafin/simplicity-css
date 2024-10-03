@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ====================================================
 // Function: convert-to-rgb
 // Description: Converts a color value to its red, green, and blue (RGB) components.
@@ -6,7 +8,9 @@
 // Returns: A comma-separated list of the red, green, and blue values of the color in that order.
 // ====================================================
 @function convert-to-rgb($value) {
-  @return red($value), green($value), blue($value);
+  @return color.channel($value, "red", $space: rgb), color.channel($value, "green", $space: rgb),
+    color.channel($value, "blue", $space: rgb);
+  // @return red($value), green($value), blue($value);
 }
 
 // ====================================================
