@@ -46,6 +46,14 @@
     #{generate-css-variable-name(opacity-#{$name})}: #{$opacity};
   }
 
+  @each $size, $value in $heading-sizes {
+    #{generate-css-variable-name(h#{$size}-font-size)}: #{$value};
+  }
+
+  @each $size, $value in $display-sizes {
+    #{generate-css-variable-name(display-#{$size}-font-size)}: #{$value};
+  }
+
   // Body styling
   #{generate-css-variable-name(body-color)}: #{$body-text-color};
   #{generate-css-variable-name(body-background)}: #{$body-bg-color};

@@ -31,7 +31,7 @@
   h#{$size},
   .h#{$size} {
     @extend %default-heading;
-    #{generate-css-variable-name(heading-font-size)}: #{$value};
+    font-size: #{use-css-variable(h#{$size}-font-size)};
   }
 }
 
@@ -42,6 +42,6 @@
 @each $size, $value in $display-sizes {
   .display-#{$size} {
     @extend %default-display;
-    #{generate-css-variable-name(heading-font-size)}: #{$value};
+    font-size: #{use-css-variable(display-#{$size}-font-size)};
   }
 }
