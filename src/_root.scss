@@ -20,6 +20,14 @@
   #{generate-css-variable-name(letter-spacing-base)}: #{$letter-spacing-base};
   #{generate-css-variable-name(line-height-base)}: #{$line-height-base};
 
+  // Heading typography settings
+  #{generate-css-variable-name(heading-font-weight)}: #{$heading-font-weight};
+  #{generate-css-variable-name(heading-letter-spacing)}: #{$heading-letter-spacing};
+  #{generate-css-variable-name(heading-margin-bottom)}: #{$heading-margin-bottom};
+  #{generate-css-variable-name(heading-margin-top)}: #{$heading-margin-top};
+  #{generate-css-variable-name(heading-line-height)}: #{$heading-line-height};
+  #{generate-css-variable-name(heading-font-size)}: #{$heading-font-size};
+
   // Scrollbar settings
   #{generate-css-variable-name(scrollbar-size)}: #{$scrollbar-size};
   #{generate-css-variable-name(scrollbar-thumb-color)}: #{$scrollbar-thumb-color};

@@ -33,6 +33,47 @@ $letter-spacing-base: 0.01rem;
 // Base line height for text
 $line-height-base: 1.5;
 
+// Heading font size
+$heading-font-size: 2rem;
+
+// Heading font weight
+$heading-font-weight: 400;
+
+// Heading letter spacing
+$heading-letter-spacing: -0.1rem;
+
+// Heading margins
+$heading-margin-bottom: 2rem;
+$heading-margin-top: 0;
+
+// Heading line height
+$heading-line-height: 1.6;
+
+// Display font weight
+$display-font-weight: 300;
+
+// Heading Sizes
+// ==================
+$heading-sizes: (
+  1: 4.6rem,
+  2: 3.6rem,
+  3: 2.8rem,
+  4: 2.2rem,
+  5: 1.8rem,
+  6: 1.6rem
+);
+
+// Display Sizes
+// ==================
+$display-sizes: (
+  1: 8rem,
+  2: 7.2rem,
+  3: 6.4rem,
+  4: 5.6rem,
+  5: 4.8rem,
+  6: 4rem
+);
+
 // =================================================
 // Color System
 // =================================================

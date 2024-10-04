@@ -1,0 +1,47 @@
+// ====================================================
+// Typography Module
+// Description: Defines the base styles for headings and display titles
+// ====================================================
+
+// Generic extensible title
+// ====================================================
+%default-heading {
+  display: block;
+  font-weight: #{use-css-variable(heading-font-weight)};
+  letter-spacing: #{use-css-variable(heading-letter-spacing)};
+  margin-bottom: #{use-css-variable(heading-margin-bottom)};
+  margin-top: #{use-css-variable(heading-margin-top)};
+  line-height: #{use-css-variable(heading-line-height)};
+  font-size: #{use-css-variable(heading-font-size)};
+}
+
+// Generic extensible display
+// ====================================================
+%default-display {
+  @extend %default-heading;
+  #{generate-css-variable-name(heading-font-weight)}: #{$display-font-weight};
+}
+
+// ====================================================
+// Main Titles Styles (h1-h6)
+// Description: Applies heading styles to both native HTML headings
+// and corresponding utility classes
+// ====================================================
+@each $size, $value in $heading-sizes {
+  h#{$size},
+  .h#{$size} {
+    @extend %default-heading;
+    #{generate-css-variable-name(heading-font-size)}: #{$value};
+  }
+}
+
+// ====================================================
+// Display Titles Styles
+// Description: Defines styles for display titles using utility classes
+// ====================================================
+@each $size, $value in $display-sizes {
+  .display-#{$size} {
+    @extend %default-display;
+    #{generate-css-variable-name(heading-font-size)}: #{$value};
+  }
+}
