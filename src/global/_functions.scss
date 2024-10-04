@@ -33,6 +33,6 @@
 //   - $prefix (optional): The prefix for the CSS variable. Defaults to the global $css-var-prefix.
 // Returns: A string representing the var() function with the CSS variable in use.
 // ====================================================
-@function use-css-variable($name, $prefix: $css-var-prefix) {
-  @return var(#{generate-css-variable-name($name, $prefix)});
+@function use-css-variable($name, $default-value: null, $prefix: $css-var-prefix) {
+  @return var(#{generate-css-variable-name($name, $prefix)}, #{$default-value});
 }
