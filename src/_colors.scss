@@ -6,6 +6,10 @@
 
   .bg-#{$color} {
     background-color: rgba(#{use-css-variable(#{$color}-rgb)}, #{use-css-variable(bg-opacity, 1)});
+
+    @if $enable-bg-color-contrast == true {
+      color: #{color-contrast($value)};
+    }
   }
 }
 
