@@ -36,3 +36,57 @@
 @function use-css-variable($name, $default-value: null, $prefix: $css-var-prefix) {
   @return var(#{generate-css-variable-name($name, $prefix)}, #{$default-value});
 }
+
+// ====================================================
+// Function: tint-color
+// Description: Lightens a given color by mixing it with white.
+// Parameters:
+//   - $color: The base color to be lightened.
+//   - $percentage: The percentage (0-100%) of white to mix into the color.
+// Returns: A lighter version of the provided color.
+// ====================================================
+@function tint-color($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// ====================================================
+// Function: shade-color
+// Description: Darkens a given color by mixing it with black.
+// Parameters:
+//   - $color: The base color to be darkened.
+//   - $percentage: The percentage (0-100%) of black to mix into the color.
+// Returns: A darker version of the provided color.
+// ====================================================
+@function shade-color($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// ====================================================
+// Function: contrast-color
+// Description: Determines whether white or black provides better contrast
+//              for the provided color to improve text readability.
+// Parameters:
+//   - $color: The base color to evaluate for contrast.
+// Returns: Either white or black variables value, depending on which provides better contrast
+//          for the provided color.
+// ====================================================
+@function color-contrast($color) {
+  // Normalize the RGB components to a scale of 0 to 1
+  $r: color.channel($color, "red", $space: rgb) / 255;
+  $g: color.channel($color, "green", $space: rgb) / 255;
+  $b: color.channel($color, "blue", $space: rgb) / 255;
+
+  // Calculate the relative luminance of the color based on the sRGB color model
+  $luminance: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+
+  // Calculate contrast with white and black
+  $contrast-white: abs($luminance - 1);
+  $contrast-black: $luminance;
+
+  // Return the color that provides the better contrast
+  @if $contrast-white >= $contrast-black {
+    @return $white;
+  } @else {
+    @return $black;
+  }
+}
