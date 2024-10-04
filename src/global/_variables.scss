@@ -8,6 +8,11 @@ $css-var-prefix: simpl;
 // Toggle to allow or disable text selection for users
 $enable-user-select: false;
 
+// Toggle to allow or disable changing text color
+// based on the background color
+// * Only applies to bg utilities
+$enable-bg-color-contrast: true;
+
 // =================================================
 // Typography
 // =================================================
