@@ -3,64 +3,52 @@
 // Description: Defines the default button styles.
 // ====================================================
 
-.button,
+.btn,
 button {
-  // Button border variables
+  // Includes the md size variant
+  @include generate-button-size("md", map-get($button-sizes, "md"));
+
+  // Common button properties (borders, fonts, etc.)
   #{generate-css-variable-name(btn-border-width)}: 2px;
+  #{generate-css-variable-name(btn-border-radius)}: 4px;
   #{generate-css-variable-name(btn-border-color)}: transparent;
   #{generate-css-variable-name(btn-border-style)}: solid;
-  #{generate-css-variable-name(btn-border-radius)}: 4px;
-
-  // Button font variables
-  #{generate-css-variable-name(btn-font-size)}: 1.4rem;
   #{generate-css-variable-name(btn-font-weight)}: 500;
   #{generate-css-variable-name(btn-font-style)}: normal;
-
-  // Button color variables
-  #{generate-css-variable-name(btn-color)}: #{$dark};
-  #{generate-css-variable-name(btn-bg)}: #{$primary};
-  #{generate-css-variable-name(btn-hover-color)}: #{$light};
-  #{generate-css-variable-name(btn-hover-bg)}: #{$secondary};
-  #{generate-css-variable-name(btn-disbaled-color)}: gray;
-  #{generate-css-variable-name(btn-disbaled-bg)}: lightgray;
-
-  // Misc variables
-  #{generate-css-variable-name(btn-min-height)}: 36px;
   #{generate-css-variable-name(btn-min-width)}: 64px;
-  #{generate-css-variable-name(btn-gutter)}: 16px;
 
-  // Font Styles
+  // Applying styles based on CSS variables
   font-size: #{use-css-variable(btn-font-size)};
   font-weight: #{use-css-variable(btn-font-weight)};
   font-style: #{use-css-variable(btn-font-style)};
   color: #{use-css-variable(btn-color)};
-
-  // Border Styles
+  background-color: #{use-css-variable(btn-bg)};
   border-width: #{use-css-variable(btn-border-width)};
   border-color: #{use-css-variable(btn-border-color)};
-  border-style: #{use-css-variable(btn-border-style)};
   border-radius: #{use-css-variable(btn-border-radius)};
-
-  // Misc Styles
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
-  background-color: #{use-css-variable(btn-bg)};
+  border-style: #{use-css-variable(btn-border-style)};
   min-height: #{use-css-variable(btn-min-height)};
   min-width: #{use-css-variable(btn-min-width)};
-  padding-inline: #{use-css-variable(btn-gutter)};
+  padding: #{use-css-variable(btn-padding)};
+  height: #{use-css-variable(btn-height)};
+
+  // Applying non customizable styles
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  outline: transparent;
   transition:
     color 200ms ease,
     border-color 200ms ease,
     background-color 200ms ease;
 
-  // Hover Styles
+  // Hover state styles
   &:hover {
     color: #{use-css-variable(btn-hover-color)};
     background-color: #{use-css-variable(btn-hover-bg)};
   }
 
-  // Outlined Variant
+  // Outlined variant
   &.outlined {
     background-color: transparent;
     border-color: #{use-css-variable(btn-bg)};
@@ -72,17 +60,48 @@ button {
     }
   }
 
-  // Disabled State
+  &.close {
+    filter: #{use-css-variable(close-filter)};
+    background: transparent #{use-css-variable(close-bg)} center / 1em no-repeat !important;
+    opacity: #{use-css-variable(close-opacity)};
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    border: 0;
+    padding: 1.25rem 1rem;
+
+    &:hover {
+      opacity: #{use-css-variable(close-opacity-hover)};
+    }
+  }
+
+  // Disabled state
   &.disabled,
   &:disabled {
     cursor: not-allowed;
-    background-color: #{use-css-variable(btn-disbaled-bg)};
-    color: #{use-css-variable(btn-disbaled-color)};
+    background-color: #{use-css-variable(btn-disabled-bg)};
+    color: #{use-css-variable(btn-disabled-color)};
 
-    // Disables pointer events when the button is active to prevent interaction
-    // but preserve cursor styles
     &:active {
       pointer-events: none;
+    }
+  }
+
+  // ====================================================
+  // Generate Button Variants for Each Color
+  // ====================================================
+  @each $color-name, $color-value in $colors {
+    &.#{$color-name} {
+      @include generate-button-colors($color-name, $color-value);
+    }
+  }
+
+  // ====================================================
+  // Generate Button Size Variants
+  // ====================================================
+  @each $size-name, $size-values in $button-sizes {
+    &.#{$size-name} {
+      @include generate-button-size($size-name, $size-values);
     }
   }
 }
