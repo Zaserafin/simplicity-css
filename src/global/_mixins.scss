@@ -1,0 +1,45 @@
+@use "sass:color";
+
+// =================================================
+// Button Mixins
+// Description: Mixins for generating button styles based on the project's
+// color scheme and size variables, following simplicity-css guidelines.
+// =================================================
+
+// Mixin: generate-button-colors
+// Description: Generates CSS variables for button background, text color,
+// and hover states based on the provided color.
+// Parameters:
+//   - $color-name: The color name.
+//   - $color-value: The base color value.
+// =================================================
+@mixin generate-button-colors($color-name, $color-value) {
+  // Generate CSS variables for default, hover, and disabled states
+  #{generate-css-variable-name(btn-bg)}: #{use-css-variable(#{$color-name}-bg, $color-value)};
+  #{generate-css-variable-name(btn-color)}: #{use-css-variable(#{$color-name}-color, color-contrast($color-value))};
+  #{generate-css-variable-name(btn-hover-bg)}: #{use-css-variable(
+      #{$color-name}-hover-bg,
+      tint-color($color-value, 20%)
+    )};
+  #{generate-css-variable-name(btn-hover-color)}: #{use-css-variable(
+      #{$color-name}-hover-color,
+      color-contrast(tint-color($color-value, 20%))
+    )};
+  #{generate-css-variable-name(btn-disabled-bg)}: #{use-css-variable(
+      #{$color-name}-disabled-bg,
+      color.adjust($color-value, $lightness: 40%)
+    )};
+  #{generate-css-variable-name(btn-disabled-color)}: #{use-css-variable(#{$color-name}-disabled-color, gray)};
+}
+
+// Mixin: generate-button-size
+// Description: Applies height, padding, and font-size for buttons.
+// Parameters:
+//   - $size: A map containing the height, padding, and font-size for the button.
+// =================================================
+@mixin generate-button-size($size-name, $size-values) {
+  // Generate CSS variables for height, padding, and font-size
+  #{generate-css-variable-name(btn-height)}: #{map-get($size-values, height)};
+  #{generate-css-variable-name(btn-padding)}: #{map-get($size-values, padding)};
+  #{generate-css-variable-name(btn-font-size)}: #{map-get($size-values, font-size)};
+}
