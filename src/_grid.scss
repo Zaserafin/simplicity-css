@@ -1,0 +1,32 @@
+// =================================================
+// Grid System:
+// Description: Defines the main grid system
+// =================================================
+
+.row {
+  #{generate-css-variable-name(gutter)}: #{$grid-gutter};
+
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    padding-inline: calc(#{use-css-variable(gutter, #{$grid-gutter})} * 0.5);
+    flex: 1 0 0%;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
+
+    @include responsive-content($breakpoint, $grid-breakpoints) {
+      @for $i from 1 through $grid-columns {
+        .column#{$breakpoint-suffix}-#{$i} {
+          flex: 0 0 auto;
+          width: #{percentage(calc($i / $grid-columns))};
+        }
+      }
+    }
+  }
+}

@@ -202,3 +202,23 @@ $button-sizes: (
     font-size: 2rem
   )
 );
+
+// =================================================
+// Grid System Variables
+// Includes the sizing and allowed breakpoints
+// =================================================
+
+$grid-columns: 12;
+$grid-gutter: 2rem;
+
+// TODO: Add validations to $grid-breakpoints
+// * Lesser breakpoints should not be larger than their superiors
+// * No two breakpoints should be the same size
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px
+) !default;
