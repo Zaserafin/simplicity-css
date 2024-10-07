@@ -39,6 +39,20 @@
   #{generate-css-variable-name(close-opacity)}: 0.4;
   #{generate-css-variable-name(close-opacity-hover)}: 0.8;
 
+  // Tables
+  #{generate-css-variable-name(table-header-bg)}: #{$table-header-bg};
+  #{generate-css-variable-name(table-header-color)}: #{color-contrast($table-header-bg)};
+  #{generate-css-variable-name(table-striped-bg)}: #{$table-striped-bg};
+  #{generate-css-variable-name(table-bordered-bg)}: #{$table-bordered-bg};
+  #{generate-css-variable-name(table-hoverable-bg)}: #{$table-hoverable-bg};
+
+  #{generate-css-variable-name(table-row-border-style)}: #{$table-row-border-style};
+  #{generate-css-variable-name(table-row-border-width)}: #{$table-row-border-width};
+  #{generate-css-variable-name(table-row-border-color)}: #{$table-row-border-color};
+  #{generate-css-variable-name(table-margin-x)}: 0;
+  #{generate-css-variable-name(table-margin-y)}: #{$table-margin};
+  #{generate-css-variable-name(table-cell-padding)}: #{$table-cell-padding};
+
   // Color palette and RGB equivalents
   @each $name, $color in $colors {
     #{generate-css-variable-name($name)}: #{$color};
