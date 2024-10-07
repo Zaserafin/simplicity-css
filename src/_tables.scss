@@ -1,0 +1,89 @@
+// ====================================================
+// Tables Styles
+// Description: Defines the default tables and table-container styles.
+// ====================================================
+
+// Container used to responsive tables
+.table-container {
+  display: block;
+  width: 100%;
+  overflow-y: visible;
+  overflow-x: auto;
+}
+
+// Applies styles to base table element
+table {
+  vertical-align: top;
+  width: 100%;
+  text-align: left;
+  margin: #{use-css-variable(table-margin-y)} #{use-css-variable(table-margin-x)};
+
+  * {
+    text-align: inherit;
+  }
+
+  & > :not(caption) > * > * {
+    padding: #{use-css-variable(table-cell-padding)};
+    box-shadow: none;
+  }
+
+  & > thead,
+  & > .thead {
+    vertical-align: bottom;
+    background-color: #{use-css-variable(table-header-bg)};
+    color: #{use-css-variable(table-header-color)};
+  }
+
+  & > tbody,
+  & > .tbody {
+    vertical-align: bottom;
+
+    tr {
+      border-bottom-style: #{use-css-variable(table-row-border-style)};
+      border-bottom-width: #{use-css-variable(table-row-border-width)};
+      border-bottom-color: #{use-css-variable(table-row-border-color)};
+
+      &:last-child {
+        border: none !important;
+      }
+    }
+  }
+
+  &.striped {
+    & > tbody,
+    & > .tbody {
+      tr {
+        border: none !important;
+
+        &:nth-child(even) {
+          background: #{use-css-variable(table-striped-bg)};
+        }
+      }
+    }
+  }
+
+  &.bordered {
+    & > thead,
+    & > .thead {
+      background-color: #{use-css-variable(table-bordered-bg)} !important;
+    }
+
+    th,
+    td {
+      border-style: #{use-css-variable(table-row-border-style)};
+      border-width: #{use-css-variable(table-row-border-width)};
+      border-color: #{use-css-variable(table-row-border-color)};
+    }
+  }
+
+  &.hoverable {
+    & > tbody,
+    & > .tbody {
+      tr {
+        &:hover {
+          background-color: #{use-css-variable(table-hoverable-bg)};
+        }
+      }
+    }
+  }
+}

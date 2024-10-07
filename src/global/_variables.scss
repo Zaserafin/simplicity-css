@@ -222,3 +222,20 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1600px
 ) !default;
+
+// =================================================
+// Tables variables
+// =================================================
+
+$table-margin: 2rem;
+$table-header-bg: $primary;
+$table-header-bg-dark: #303030;
+$table-cell-padding: 1rem;
+
+$table-striped-bg: #b5ccc033;
+$table-bordered-bg: transparent;
+$table-hoverable-bg: #b5ccc04d;
+
+$table-row-border-width: 0.2rem;
+$table-row-border-color: #6f7c704d;
+$table-row-border-style: solid;
