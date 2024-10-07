@@ -43,3 +43,21 @@
   #{generate-css-variable-name(btn-padding)}: #{map-get($size-values, padding)};
   #{generate-css-variable-name(btn-font-size)}: #{map-get($size-values, font-size)};
 }
+
+// Mixin: responsive-content
+// Description: Place the content within a media query
+//              or in the root selector if its the smallest breakpoint
+// Parameters:
+//   - $name: The name of the target breakpoint.
+//   - $breakpoints: A list of breakpoints, by default uses $grid-breakpoints.
+// =================================================
+@mixin responsive-content($name, $breakpoints: $grid-breakpoints) {
+  $min: get-breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

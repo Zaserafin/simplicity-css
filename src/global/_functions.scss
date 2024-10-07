@@ -90,3 +90,35 @@
     @return $black;
   }
 }
+
+// ====================================================
+// Function: get-breakpoint-min
+// Description: Returns the corresponding breakpoint value
+//              or null if it is the lowest.
+// Parameters:
+//   - $name: The name of the target breakpoint.
+//   - $breakpoints: A list of allowed breakpoints.
+// Returns: The breakpoint data or null if its smallest breakpoint.
+// ====================================================
+@function get-breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @if type-of($min) != "number" {
+    @warn "Breakpoint '#{$name}' not found in provided breakpoints map.";
+    @return null;
+  }
+  @return if($min != 0, $min, null);
+}
+
+// ====================================================
+// Function: get-breakpoint-suffix
+// Description: Returns the name of the breakpoint
+//              or null if it is the smallest
+// Parameters:
+//   - $name: The name of the target breakpoint.
+//   - $breakpoints: A list of allowed breakpoints.
+// Returns: The name of the target breakpoint
+//          or empty string if its smallest breakpoint.
+// ====================================================
+@function get-breakpoint-suffix($name, $breakpoints) {
+  @return if(get-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
