@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 
 // ====================================================
 // Function: convert-to-rgb
@@ -10,7 +11,6 @@
 @function convert-to-rgb($value) {
   @return color.channel($value, "red", $space: rgb), color.channel($value, "green", $space: rgb),
     color.channel($value, "blue", $space: rgb);
-  // @return red($value), green($value), blue($value);
 }
 
 // ====================================================
@@ -72,9 +72,9 @@
 // ====================================================
 @function color-contrast($color) {
   // Normalize the RGB components to a scale of 0 to 1
-  $r: color.channel($color, "red", $space: rgb) / 255;
-  $g: color.channel($color, "green", $space: rgb) / 255;
-  $b: color.channel($color, "blue", $space: rgb) / 255;
+  $r: math.div(color.channel($color, "red", $space: rgb), 255);
+  $g: math.div(color.channel($color, "green", $space: rgb), 255);
+  $b: math.div(color.channel($color, "blue", $space: rgb), 255);
 
   // Calculate the relative luminance of the color based on the sRGB color model
   $luminance: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
