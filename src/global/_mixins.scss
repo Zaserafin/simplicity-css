@@ -61,3 +61,19 @@
     @content;
   }
 }
+
+// Mixin: generate-animation
+// Description: Generates the styles for an animation, with configurable speed and timing.
+// Parameters:
+//   - $animation-name: The name of the animation.
+//   - $duration-factor: A multiplier for the base animation speed (default: 1).
+//   - $timing: The timing function for the animation (default: linear).
+// =================================================
+@mixin generate-animation($animation-name, $duration-factor: 1, $timing: linear) {
+  animation-name: #{$animation-name};
+  animation-duration: calc(
+    #{use-css-variable(animation-speed, $animation-base-speed)} * #{$duration-factor}
+  ) !important;
+  animation-iteration-count: infinite;
+  animation-timing-function: #{$timing};
+}
