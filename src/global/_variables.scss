@@ -8,6 +8,12 @@ $css-var-prefix: simpl;
 // Toggle to allow or disable text selection for users
 $enable-user-select: false;
 
+// Used for pills and circle elements
+$border-radius-infinite: 99999px;
+
+// Defines the base speed for all animations
+$animation-base-speed: 1s;
+
 // Toggle to allow or disable changing text color
 // based on the background color
 // * Only applies to bg utilities
@@ -239,3 +245,27 @@ $table-hoverable-bg: #b5ccc04d;
 $table-row-border-width: 0.2rem;
 $table-row-border-color: #6f7c704d;
 $table-row-border-style: solid;
+
+// =================================================
+// Loaders variables
+// =================================================
+
+$loader-default-size: 4rem;
+$loader-default-width: 0.6rem;
+$loader-default-color: $quaternary;
+
+$loader-speeds: (
+  slowest: 1.6s,
+  slow: 1.3s,
+  normal: 1s,
+  fast: 0.8s,
+  fastest: 0.4s
+);
+
+$loader-base-size: 0px;
+$loader-spinner-size: 40px;
+$loader-dots-size: 60px;
+$loader-bars-size: 40px;
+$loader-pulse-size: 2.16rem;
+
+$loader-bars-amount: 5;

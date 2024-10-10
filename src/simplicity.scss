@@ -14,6 +14,8 @@
 
 @import "./global/mixins";
 
+@import "./global/animations";
+
 // =================================================
 // Import base styles and global resets
 // =================================================
@@ -21,6 +23,8 @@
 @import "./root";
 
 @import "./base";
+
+@import "./loaders";
 
 @import "./colors";
 
