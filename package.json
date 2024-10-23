@@ -12,11 +12,9 @@
     "build:sass": "npm-run-all sass:compile autoprefixer sass:minify",
     "build": "npm-run-all build:sass",
     "start": "concurrently \"npm run sass:watch\" \"browser-sync start --config bs-config.cjs\"",
-    "lint": "npx eslint src",
-    "lint:fix": "npm run lint -- --fix",
     "stylelint": "npx stylelint \"**/*.scss\"",
     "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
-    "format": "npm run stylelint:fix && npm run lint:fix",
+    "format": "npm run stylelint:fix",
     "prepare": "husky install"
   },
   "repository": {
@@ -50,10 +48,6 @@
     "stylelint-config-standard-scss": "^13.1.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "stylelint \"**/*.scss\" --fix"
-    ],
     "src/**/*.scss": [
       "stylelint \"**/*.scss\" --fix"
     ]
