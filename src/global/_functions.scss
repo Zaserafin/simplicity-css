@@ -1,5 +1,7 @@
 @use "sass:color";
 @use "sass:math";
+@use "sass:map";
+@use "sass:meta";
 
 // ====================================================
 // Function: convert-to-rgb
@@ -9,7 +11,8 @@
 // Returns: A comma-separated list of the red, green, and blue values of the color in that order.
 // ====================================================
 @function convert-to-rgb($value) {
-  @return color.channel($value, "red", $space: rgb), color.channel($value, "green", $space: rgb),
+  @return color.channel($value, "red", $space: rgb),
+    color.channel($value, "green", $space: rgb),
     color.channel($value, "blue", $space: rgb);
 }
 
@@ -33,7 +36,11 @@
 //   - $prefix (optional): The prefix for the CSS variable. Defaults to the global $css-var-prefix.
 // Returns: A string representing the var() function with the CSS variable in use.
 // ====================================================
-@function use-css-variable($name, $default-value: null, $prefix: $css-var-prefix) {
+@function use-css-variable(
+  $name,
+  $default-value: null,
+  $prefix: $css-var-prefix
+) {
   @return var(#{generate-css-variable-name($name, $prefix)}, #{$default-value});
 }
 
@@ -46,7 +53,7 @@
 // Returns: A lighter version of the provided color.
 // ====================================================
 @function tint-color($color, $percentage) {
-  @return mix(white, $color, $percentage);
+  @return color.mix(white, $color, $percentage);
 }
 
 // ====================================================
@@ -58,7 +65,7 @@
 // Returns: A darker version of the provided color.
 // ====================================================
 @function shade-color($color, $percentage) {
-  @return mix(black, $color, $percentage);
+  @return color.mix(black, $color, $percentage);
 }
 
 // ====================================================
@@ -80,7 +87,7 @@
   $luminance: 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 
   // Calculate contrast with white and black
-  $contrast-white: abs($luminance - 1);
+  $contrast-white: math.abs($luminance - 1);
   $contrast-black: $luminance;
 
   // Return the color that provides the better contrast
@@ -101,11 +108,13 @@
 // Returns: The breakpoint data or null if its smallest breakpoint.
 // ====================================================
 @function get-breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
-  @if type-of($min) != "number" {
+  $min: map.get($breakpoints, $name);
+
+  @if meta.type-of($min) != "number" {
     @warn "Breakpoint '#{$name}' not found in provided breakpoints map.";
     @return null;
   }
+
   @return if($min != 0, $min, null);
 }
 

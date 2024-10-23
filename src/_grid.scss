@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+
 // =================================================
 // Grid System:
 // Description: Defines the main grid system
@@ -5,7 +8,6 @@
 
 .row {
   #{generate-css-variable-name(gutter)}: #{$grid-gutter};
-
   display: flex;
   flex-wrap: wrap;
 
@@ -17,14 +19,14 @@
     max-width: 100%;
   }
 
-  @each $breakpoint in map-keys($grid-breakpoints) {
+  @each $breakpoint in map.keys($grid-breakpoints) {
     $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
 
     @include responsive-content($breakpoint, $grid-breakpoints) {
       @for $i from 1 through $grid-columns {
         .column#{$breakpoint-suffix}-#{$i} {
           flex: 0 0 auto;
-          width: #{percentage(calc($i / $grid-columns))};
+          width: #{math.percentage(calc($i / $grid-columns))};
         }
       }
     }

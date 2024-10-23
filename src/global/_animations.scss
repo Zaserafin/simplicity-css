@@ -5,6 +5,7 @@
   100% {
     transform: scaleY(1);
   }
+
   20% {
     transform: scaleY(2);
   }
@@ -16,6 +17,7 @@
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -26,6 +28,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -39,6 +42,7 @@
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.5);
     opacity: 0.5;

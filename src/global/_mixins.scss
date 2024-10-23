@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:map";
 
 // =================================================
 // Button Mixins
@@ -15,8 +16,14 @@
 // =================================================
 @mixin generate-button-colors($color-name, $color-value) {
   // Generate CSS variables for default, hover, and disabled states
-  #{generate-css-variable-name(btn-bg)}: #{use-css-variable(#{$color-name}-bg, $color-value)};
-  #{generate-css-variable-name(btn-color)}: #{use-css-variable(#{$color-name}-color, color-contrast($color-value))};
+  #{generate-css-variable-name(btn-bg)}: #{use-css-variable(
+      #{$color-name}-bg,
+      $color-value
+    )};
+  #{generate-css-variable-name(btn-color)}: #{use-css-variable(
+      #{$color-name}-color,
+      color-contrast($color-value)
+    )};
   #{generate-css-variable-name(btn-hover-bg)}: #{use-css-variable(
       #{$color-name}-hover-bg,
       tint-color($color-value, 20%)
@@ -29,7 +36,10 @@
       #{$color-name}-disabled-bg,
       color.adjust($color-value, $lightness: 40%)
     )};
-  #{generate-css-variable-name(btn-disabled-color)}: #{use-css-variable(#{$color-name}-disabled-color, gray)};
+  #{generate-css-variable-name(btn-disabled-color)}: #{use-css-variable(
+      #{$color-name}-disabled-color,
+      gray
+    )};
 }
 
 // Mixin: generate-button-size
@@ -39,9 +49,12 @@
 // =================================================
 @mixin generate-button-size($size-name, $size-values) {
   // Generate CSS variables for height, padding, and font-size
-  #{generate-css-variable-name(btn-height)}: #{map-get($size-values, height)};
-  #{generate-css-variable-name(btn-padding)}: #{map-get($size-values, padding)};
-  #{generate-css-variable-name(btn-font-size)}: #{map-get($size-values, font-size)};
+  #{generate-css-variable-name(btn-height)}: #{map.get($size-values, height)};
+  #{generate-css-variable-name(btn-padding)}: #{map.get($size-values, padding)};
+  #{generate-css-variable-name(btn-font-size)}: #{map.get(
+      $size-values,
+      font-size
+    )};
 }
 
 // Mixin: responsive-content
@@ -53,6 +66,7 @@
 // =================================================
 @mixin responsive-content($name, $breakpoints: $grid-breakpoints) {
   $min: get-breakpoint-min($name, $breakpoints);
+
   @if $min {
     @media (min-width: $min) {
       @content;
@@ -69,7 +83,11 @@
 //   - $duration-factor: A multiplier for the base animation speed (default: 1).
 //   - $timing: The timing function for the animation (default: linear).
 // =================================================
-@mixin generate-animation($animation-name, $duration-factor: 1, $timing: linear) {
+@mixin generate-animation(
+  $animation-name,
+  $duration-factor: 1,
+  $timing: linear
+) {
   animation-name: #{$animation-name};
   animation-duration: calc(
     #{use-css-variable(animation-speed, $animation-base-speed)} * #{$duration-factor}
@@ -86,14 +104,17 @@
 // =================================================
 @mixin generate-utility($utilities) {
   @each $key, $utility in $utilities {
-    $properties: map-get($utility, properties);
-    $selector: map-get($utility, selector);
-    $values: map-get($utility, values);
+    $properties: map.get($utility, properties);
+    $selector: map.get($utility, selector);
+    $values: map.get($utility, values);
 
-    @each $breakpoint in map-keys($grid-breakpoints) {
+    @each $breakpoint in map.keys($grid-breakpoints) {
       @include responsive-content($breakpoint, $grid-breakpoints) {
         @each $index, $value in $values {
-          $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
+          $breakpoint-suffix: get-breakpoint-suffix(
+            $breakpoint,
+            $grid-breakpoints
+          );
 
           .#{$selector}#{$breakpoint-suffix}-#{$index} {
             @each $property in $properties {

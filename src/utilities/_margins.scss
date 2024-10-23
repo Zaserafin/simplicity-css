@@ -9,7 +9,6 @@ $margin-properties: (
   bottom: margin-bottom,
   start: margin-left
 );
-
 $margins: (
   "margin": (
     properties: map.get($margin-properties, all),

@@ -25,21 +25,23 @@
 }
 
 // Styles for the spinner (circular loader)
-//===================================================
+// ===================================================
 .spinner-loader {
   @extend %loader;
-  #{generate-css-variable-name(loader-size)}: #{$loader-spinner-size};
 
+  #{generate-css-variable-name(loader-size)}: #{$loader-spinner-size};
   border: 4px solid rgba(#{use-css-variable(dark-rgb, $dark)}, 0.1);
-  border-top: 4px solid currentColor !important;
+  border-top: 4px solid currentcolor !important;
   border-radius: 50%;
+
   @include generate-animation(spin);
 }
 
 // Styles for the dots loader (bouncing dots)
-//===================================================
+// ===================================================
 .dots-loader {
   @extend %loader;
+
   #{generate-css-variable-name(loader-size)}: #{$loader-dots-size};
   margin-inline: 0;
 
@@ -48,48 +50,55 @@
     min-width: #{use-css-variable(dot-size, 1rem)} !important;
     min-height: #{use-css-variable(dot-size, 1rem)} !important;
     margin: 0 5px;
-    background-color: currentColor !important;
+    background-color: currentcolor !important;
     border-radius: #{$border-radius-infinite};
+
     @include generate-animation(bounce, 0.8);
 
-    &:nth-child(2) {
+    :nth-child(2) {
       animation-delay: calc(#{use-css-variable(animation-speed)} * 0.2);
     }
 
-    &:nth-child(3) {
+    :nth-child(3) {
       animation-delay: calc(#{use-css-variable(animation-speed)} * 0.4);
     }
   }
 }
 
 // Styles for the bars loader
-//===================================================
+// ===================================================
 .bars-loader {
   @extend %loader;
+
   #{generate-css-variable-name(loader-size)}: #{$loader-bars-size};
 
   div {
     width: 0.4rem;
     height: 2rem;
     margin: 0 0.2rem;
-    background-color: currentColor !important;
+    background-color: currentcolor !important;
     border-radius: 1rem;
+
     @include generate-animation(stretch, 1.2, ease-in-out);
 
     @for $i from 1 through $loader-bars-amount {
       &:nth-child(#{$i}) {
-        animation-delay: calc(#{use-css-variable(animation-speed)} * (0.2 * $i));
+        animation-delay: calc(
+          #{use-css-variable(animation-speed)} * (0.2 * $i)
+        );
       }
     }
   }
 }
 
 // Styles for the pulse loader
-//===================================================
+// ===================================================
 .pulse-loader {
   @extend %loader;
+
   #{generate-css-variable-name(loader-size)}: #{$loader-pulse-size};
   border-radius: 50%;
-  background-color: currentColor;
+  background-color: currentcolor;
+
   @include generate-animation(pulse, 1.5, ease-in-out);
 }

@@ -8,15 +8,13 @@
     "sass:compile": "sass --no-source-map --style=expanded src:dist/css",
     "sass:watch": "sass --watch --no-source-map --style=expanded src:dist/css",
     "sass:minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
-    "sass:prettier": "npx prettier --write \"**/*.scss\"",
+    "sass:lint": "npx stylelint \"**/*.scss\" --fix",
     "build:sass": "npm-run-all sass:compile autoprefixer sass:minify",
     "build": "npm-run-all build:sass",
     "start": "concurrently \"npm run sass:watch\" \"browser-sync start --config bs-config.cjs\"",
-    "lint": "npx eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src --check",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix",
+    "stylelint": "npx stylelint \"**/*.scss\"",
+    "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
+    "format": "npm run stylelint:fix",
     "prepare": "husky install"
   },
   "repository": {
@@ -38,23 +36,20 @@
     "clean-css-cli": "^5.6.3",
     "concurrently": "^9.0.1",
     "eslint": "^9.11.0",
-    "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "npm-run-all2": "^6.2.3",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
-    "prettier": "^3.3.3",
-    "sass": "^1.79.3"
+    "sass": "^1.79.3",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
     "src/**/*.scss": [
-      "prettier --write"
+      "npm run stylelint:fix"
     ]
   }
 }
