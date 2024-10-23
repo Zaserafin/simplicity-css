@@ -1,0 +1,49 @@
+@use "sass:map";
+
+$padding-properties: (
+  all: padding,
+  x: padding-left padding-right,
+  y: padding-top padding-bottom,
+  top: padding-top,
+  end: padding-right,
+  bottom: padding-bottom,
+  start: padding-left
+);
+
+$paddings: (
+  "padding": (
+    properties: map.get($padding-properties, all),
+    selector: p,
+    values: $spacers
+  ),
+  "padding-x": (
+    properties: map.get($padding-properties, x),
+    selector: px,
+    values: $spacers
+  ),
+  "padding-y": (
+    properties: map.get($padding-properties, y),
+    selector: py,
+    values: $spacers
+  ),
+  "padding-top": (
+    properties: map.get($padding-properties, top),
+    selector: pt,
+    values: $spacers
+  ),
+  "padding-end": (
+    properties: map.get($padding-properties, end),
+    selector: pe,
+    values: $spacers
+  ),
+  "padding-bottom": (
+    properties: map.get($padding-properties, bottom),
+    selector: pb,
+    values: $spacers
+  ),
+  "padding-start": (
+    properties: map.get($padding-properties, start),
+    selector: ps,
+    values: $spacers
+  )
+);

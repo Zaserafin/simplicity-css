@@ -1,0 +1,36 @@
+@import "./utilities/borders";
+@import "./utilities/displays";
+@import "./utilities/grid";
+@import "./utilities/gaps";
+@import "./utilities/heights";
+@import "./utilities/margins";
+@import "./utilities/paddings";
+@import "./utilities/typography";
+@import "./utilities/widths";
+
+// Generate Borders Utilitites
+@include generate-utility($borders);
+
+// Generate Display Utilitites
+@include generate-utility($displays);
+
+// Generate Gap Utilities
+@include generate-utility($gaps);
+
+// Generate Height Utiltie
+@include generate-utility($heights);
+
+// Generate Margin Utilities
+@include generate-utility($margins);
+
+// Generate Padding Utilities
+@include generate-utility($paddings);
+
+// Generate Typography Utilities
+@include generate-utility($typography);
+
+// Generate Width Utilities
+@include generate-utility($widths);
+
+// Generate Grid Utilities
+@include generate-utility($grid);

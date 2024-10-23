@@ -32,11 +32,6 @@
   ],
   "author": "Zaserafin <contacto@zaserafin.com>",
   "license": "MIT",
-  "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "not < 0.5%"
-  ],
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.2",

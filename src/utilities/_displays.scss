@@ -1,0 +1,15 @@
+$displays: (
+  "display": (
+    properties: display,
+    selector: d,
+    values: (
+      grid: grid,
+      flex: flex,
+      block: block,
+      inline-flex: inline-flex,
+      inline-block: inline-block,
+      table: table,
+      none: none
+    )
+  )
+);

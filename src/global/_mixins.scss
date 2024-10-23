@@ -77,3 +77,31 @@
   animation-iteration-count: infinite;
   animation-timing-function: #{$timing};
 }
+
+// Mixin: generate-utility
+// Description: Parses utilities array to CSS classes and styles
+// Applies responsive breakpoints
+// Parameters:
+//    - $utilities: The array of utilities
+// =================================================
+@mixin generate-utility($utilities) {
+  @each $key, $utility in $utilities {
+    $properties: map-get($utility, properties);
+    $selector: map-get($utility, selector);
+    $values: map-get($utility, values);
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      @include responsive-content($breakpoint, $grid-breakpoints) {
+        @each $index, $value in $values {
+          $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
+
+          .#{$selector}#{$breakpoint-suffix}-#{$index} {
+            @each $property in $properties {
+              #{$property}: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+}

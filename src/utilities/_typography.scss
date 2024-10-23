@@ -1,0 +1,52 @@
+$typography: (
+  "font-style": (
+    properties: font-style,
+    selector: text,
+    values: (
+      normal: normal,
+      italic: italic,
+      oblique: oblique
+    )
+  ),
+  "font-weight": (
+    properties: font-weight,
+    selector: font,
+    values: (
+      light: 300,
+      normal: 400,
+      medium: 500,
+      bold: 700,
+      extrabold: 800
+    )
+  ),
+  "text-decoration": (
+    properties: text-decoration,
+    selector: text,
+    values: (
+      none: none,
+      underline: underline,
+      overline: overline,
+      line-through: line-through
+    )
+  ),
+  "text-align": (
+    properties: text-align,
+    selector: text,
+    values: (
+      left: left,
+      right: right,
+      center: center,
+      justify: justify
+    )
+  ),
+  "text-transform": (
+    properties: text-transform,
+    selector: transform,
+    values: (
+      none: none,
+      capitalize: capitalize,
+      uppercase: uppercase,
+      lowercase: lowercase
+    )
+  )
+);

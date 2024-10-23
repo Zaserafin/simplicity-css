@@ -9,7 +9,7 @@
   <body>
     <h1>Simplicity CSS</h1>
 
-    <article class="container">
+    <article class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0">
       <h3>Color Utilities:</h3>
       <hr />
       <section>
@@ -26,32 +26,32 @@
       </section>
       <section>
         <h3>Background Colors:</h3>
-        <div>
-          <h4 class="bg-primary">Primary Color</h4>
-          <h4 class="bg-secondary">Secondary Color</h4>
-          <h4 class="bg-tertiary">Tertiary Color</h4>
-          <h4 class="bg-quaternary">Quaternary Color</h4>
-          <h4 class="bg-warning">Warning Color</h4>
-          <h4 class="bg-danger">Danger Color</h4>
-          <h4 class="bg-success">Success Color</h4>
-          <h4 class="bg-dark">Dark Color</h4>
-          <h4 class="bg-light">Light Color</h4>
+        <div class="d-grid grid-cols-3 gap-x-2">
+          <h4 class="bg-primary rounded-lg px-3 py-2">Primary Color</h4>
+          <h4 class="bg-secondary rounded-lg px-3 py-2">Secondary Color</h4>
+          <h4 class="bg-tertiary rounded-lg px-3 py-2">Tertiary Color</h4>
+          <h4 class="bg-quaternary rounded-lg px-3 py-2">Quaternary Color</h4>
+          <h4 class="bg-warning rounded-lg px-3 py-2">Warning Color</h4>
+          <h4 class="bg-danger rounded-lg px-3 py-2">Danger Color</h4>
+          <h4 class="bg-success rounded-lg px-3 py-2">Success Color</h4>
+          <h4 class="bg-dark rounded-lg px-3 py-2">Dark Color</h4>
+          <h4 class="bg-light rounded-lg px-3 py-2">Light Color</h4>
         </div>
       </section>
       <section>
         <h3>Opacities:</h3>
         <div class="d-flex flex-wrap">
-          <div class="opacity-100 bg-primary text-light">100%</div>
-          <div class="opacity-90 bg-primary text-light">90%</div>
-          <div class="opacity-80 bg-primary text-light">80%</div>
-          <div class="opacity-70 bg-primary text-light">70%</div>
-          <div class="opacity-60 bg-primary text-light">60%</div>
-          <div class="opacity-50 bg-primary text-light">50%</div>
-          <div class="opacity-40 bg-primary text-light">40%</div>
-          <div class="opacity-30 bg-primary text-light">30%</div>
-          <div class="opacity-20 bg-primary text-light">20%</div>
-          <div class="opacity-10 bg-primary text-light">10%</div>
-          <div class="opacity-0 bg-primary text-light">0%</div>
+          <div class="opacity-100 p-3 m-2 bg-primary text-light">100%</div>
+          <div class="opacity-90 p-3 m-2 bg-primary text-light">90%</div>
+          <div class="opacity-80 p-3 m-2 bg-primary text-light">80%</div>
+          <div class="opacity-70 p-3 m-2 bg-primary text-light">70%</div>
+          <div class="opacity-60 p-3 m-2 bg-primary text-light">60%</div>
+          <div class="opacity-50 p-3 m-2 bg-primary text-light">50%</div>
+          <div class="opacity-40 p-3 m-2 bg-primary text-light">40%</div>
+          <div class="opacity-30 p-3 m-2 bg-primary text-light">30%</div>
+          <div class="opacity-20 p-3 m-2 bg-primary text-light">20%</div>
+          <div class="opacity-10 p-3 m-2 bg-primary text-light">10%</div>
+          <div class="opacity-0 p-3 m-2 bg-primary text-light">0%</div>
         </div>
       </section>
     </article>
@@ -345,12 +345,16 @@
       <hr />
 
       <section class="row">
-        <span class="column bg-quaternary text-light column-md-8">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, aut accusamus aliquam excepturi eum, qui ex
-          quos ea ratione, aperiam nobis voluptates animi quia sunt deserunt deleniti quasi asperiores similique.
-        </span>
-        <span class="column bg-quaternary text-light"> Column </span>
-        <span class="column bg-quaternary text-light"> Column </span>
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary column-md-8"
+          >Column</span
+        >
+        <span class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+          >Column</span
+        >
+        <span class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+          >Column</span
+        >
       </section>
     </article>
 
@@ -519,18 +523,5 @@
         </div>
       </section>
     </article>
-
-    <p class="container">
-      <button class="primary">Primary</button>
-
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque molestias nam explicabo voluptas voluptate
-      doloremque ab placeat beatae, tempora sunt odit quam amet alias optio consectetur praesentium, quaerat vitae
-      officia?
-    </p>
-    <p class="container-fluid">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque molestias nam explicabo voluptas voluptate
-      doloremque ab placeat beatae, tempora sunt odit quam amet alias optio consectetur praesentium, quaerat vitae
-      officia?
-    </p>
   </body>
 </html>

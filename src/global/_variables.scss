@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // =================================================
 // General Configurations
 // =================================================
@@ -269,3 +271,36 @@ $loader-bars-size: 40px;
 $loader-pulse-size: 2.16rem;
 
 $loader-bars-amount: 5;
+
+// =================================================
+// Generic Utilities Variables
+// =================================================
+
+$spacer: 2rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+) !default;
+
+// Reusable Variables
+$common-values: map.merge(
+  $spacers,
+  (
+    auto: auto
+  )
+);
+
+// Common values of widths and heights
+// TODO: Implement fixed size values
+$dimension-values: (
+  auto: auto,
+  full: 100%,
+  screen: 100vh,
+  min: min-content,
+  max: max-content,
+  fit: fit-content
+);
