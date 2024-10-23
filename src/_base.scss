@@ -41,6 +41,8 @@ body {
   @if $enable-user-select == false {
     user-select: none !important;
   }
+
+  border: 0 solid transparent;
 }
 
 // Ensures images are fluid and scale while preserving aspect ratio.
