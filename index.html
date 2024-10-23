@@ -1,14 +1,22 @@
 <!doctype html>
-<html lang="es-ar">
+<html lang="es-ar" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simplicity CSS</title>
     <link rel="stylesheet" href="dist/css/simplicity.css" />
+
+    <style>
+      #toggle-theme {
+        position: sticky;
+        top: 10px;
+        left: 0px;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
-    <h1>Simplicity CSS</h1>
-
+    <button id="toggle-theme" class="primary m-4">Change theme</button>
     <article class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0">
       <h3>Color Utilities:</h3>
       <hr />
@@ -131,8 +139,9 @@
       <hr />
       <small>
         <i>
-          In order to change the loaders color you need to use the <b>text-[color]</b> utilities or set a color value
-          using css. Because each loader inherits the color from the parent loader selector
+          In order to change the loaders color you need to use the
+          <b>text-[color]</b> utilities or set a color value using css. Because
+          each loader inherits the color from the parent loader selector
         </i>
       </small>
 
@@ -349,10 +358,12 @@
           class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary column-md-8"
           >Column</span
         >
-        <span class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
           >Column</span
         >
-        <span class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
           >Column</span
         >
       </section>
@@ -523,5 +534,16 @@
         </div>
       </section>
     </article>
+
+    <script>
+      document.getElementById("toggle-theme").addEventListener("click", () => {
+        const theme = document.documentElement.dataset.theme;
+        if (theme === "dark") {
+          document.documentElement.dataset.theme = "light";
+        } else {
+          document.documentElement.dataset.theme = "dark";
+        }
+      });
+    </script>
   </body>
 </html>

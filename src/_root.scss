@@ -76,4 +76,24 @@
   // Body styling
   #{generate-css-variable-name(body-color)}: #{$body-text-color};
   #{generate-css-variable-name(body-background)}: #{$body-bg-color};
+
+  // Loaders background
+  #{generate-css-variable-name(loader-background)}: #{$loader-background};
+}
+
+:root[data-theme="dark"] {
+  #{generate-css-variable-name(body-color)}: #{$body-text-color-dark};
+  #{generate-css-variable-name(body-background)}: #{$body-bg-color-dark};
+
+  // Table vars
+  #{generate-css-variable-name(table-header-bg)}: #{$table-header-bg-dark};
+  #{generate-css-variable-name(table-header-color)}: #{color-contrast(
+      $table-header-bg-dark
+    )};
+
+  // Close Button
+  #{generate-css-variable-name(close-filter)}: invert(1) grayscale(100%) brightness(200%);
+    
+  // Loaders background
+  #{generate-css-variable-name(loader-background)}: #{$loader-background-dark};
 }
