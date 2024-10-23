@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // ====================================================
 // Button Styles
 // Description: Defines the default button styles.
@@ -6,7 +8,7 @@
 .btn,
 button {
   // Includes the md size variant
-  @include generate-button-size("md", map-get($button-sizes, "md"));
+  @include generate-button-size("md", map.get($button-sizes, "md"));
 
   // Common button properties (borders, fonts, etc.)
   #{generate-css-variable-name(btn-border-width)}: 2px;

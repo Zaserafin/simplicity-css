@@ -32,10 +32,10 @@ $font-size-root: 10px;
 $font-size-base: 1.6rem;
 
 // Font family for standard text
-$font-family-base: "Helvetica Neue", Arial, sans-serif;
+$font-family-base: "Helvetica Neue", arial, sans-serif;
 
 // Font family for code blocks
-$font-family-code: "Courier New", Courier, monospace;
+$font-family-code: "Courier New", courier, monospace;
 
 // Base font weight for text
 $font-weight-base: 300;
@@ -112,7 +112,7 @@ $secondary: #6c757d;
 $tertiary: #ffc107;
 $quaternary: #17a2b8;
 $warning: #dc3545;
-$danger: #ff0000;
+$danger: #f00;
 $success: #28a745;
 $dark: #343a40;
 $light: #f8f9fa;
@@ -239,11 +239,9 @@ $table-margin: 2rem;
 $table-header-bg: $primary;
 $table-header-bg-dark: #303030;
 $table-cell-padding: 1rem;
-
 $table-striped-bg: #b5ccc033;
 $table-bordered-bg: transparent;
 $table-hoverable-bg: #b5ccc04d;
-
 $table-row-border-width: 0.2rem;
 $table-row-border-color: #6f7c704d;
 $table-row-border-style: solid;
@@ -255,7 +253,6 @@ $table-row-border-style: solid;
 $loader-default-size: 4rem;
 $loader-default-width: 0.6rem;
 $loader-default-color: $quaternary;
-
 $loader-speeds: (
   slowest: 1.6s,
   slow: 1.3s,
@@ -263,13 +260,11 @@ $loader-speeds: (
   fast: 0.8s,
   fastest: 0.4s
 );
-
 $loader-base-size: 0px;
 $loader-spinner-size: 40px;
 $loader-dots-size: 60px;
 $loader-bars-size: 40px;
 $loader-pulse-size: 2.16rem;
-
 $loader-bars-amount: 5;
 
 // =================================================

@@ -9,7 +9,6 @@ $padding-properties: (
   bottom: padding-bottom,
   start: padding-left
 );
-
 $paddings: (
   "padding": (
     properties: map.get($padding-properties, all),

@@ -7,8 +7,7 @@
 .table-container {
   display: block;
   width: 100%;
-  overflow-y: visible;
-  overflow-x: auto;
+  overflow: auto visible;
 }
 
 // Applies styles to base table element
@@ -16,7 +15,9 @@ table {
   vertical-align: top;
   width: 100%;
   text-align: left;
-  margin: #{use-css-variable(table-margin-y)} #{use-css-variable(table-margin-x)};
+  margin: #{use-css-variable(table-margin-y)} #{use-css-variable(
+      table-margin-x
+    )};
 
   * {
     text-align: inherit;
@@ -39,9 +40,9 @@ table {
     vertical-align: bottom;
 
     tr {
-      border-bottom-style: #{use-css-variable(table-row-border-style)};
-      border-bottom-width: #{use-css-variable(table-row-border-width)};
-      border-bottom-color: #{use-css-variable(table-row-border-color)};
+      border-bottom: #{use-css-variable(table-row-border-width)} #{use-css-variable(
+          table-row-border-style
+        )} #{use-css-variable(table-row-border-color)};
 
       &:last-child {
         border: none !important;

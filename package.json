@@ -49,7 +49,7 @@
   },
   "lint-staged": {
     "src/**/*.scss": [
-      "stylelint \"**/*.scss\" --fix"
+      "npm run stylelint:fix"
     ]
   }
 }
