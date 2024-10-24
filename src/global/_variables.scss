@@ -73,7 +73,7 @@ $heading-sizes: (
   3: 2.8rem,
   4: 2.2rem,
   5: 1.8rem,
-  6: 1.6rem
+  6: 1.6rem,
 );
 
 // Display Sizes
@@ -84,7 +84,7 @@ $display-sizes: (
   3: 6.4rem,
   4: 5.6rem,
   5: 4.8rem,
-  6: 4rem
+  6: 4rem,
 );
 
 // =================================================
@@ -103,7 +103,7 @@ $opacities: (
   70: 0.7,
   80: 0.8,
   90: 0.9,
-  100: 1
+  100: 1,
 );
 
 // Core color palette
@@ -129,7 +129,7 @@ $colors: (
   danger: $danger,
   success: $success,
   dark: $dark,
-  light: $light
+  light: $light,
 );
 
 // Default text and background colors
@@ -140,11 +140,10 @@ $bg-color: $light !default;
 // Body Styling Variables
 // =================================================
 
-// Default body text color
 $body-text-color: $dark !default;
-
-// Default body background color
 $body-bg-color: $light !default;
+$body-text-color-dark: $light !default;
+$body-bg-color-dark: $dark !default;
 
 // =================================================
 // Scrollbar Styling
@@ -175,7 +174,7 @@ $container-sizes: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px
+  xxl: 1320px,
 ) !default;
 
 // =================================================
@@ -187,28 +186,28 @@ $button-sizes: (
   xs: (
     height: 2.4rem,
     padding: 0.4rem 0.8rem,
-    font-size: 1.2rem
+    font-size: 1.2rem,
   ),
   sm: (
     height: 3rem,
     padding: 0.6rem 1.2rem,
-    font-size: 1.4rem
+    font-size: 1.4rem,
   ),
   md: (
     height: 3.6rem,
     padding: 0.8rem 1.6rem,
-    font-size: 1.6rem
+    font-size: 1.6rem,
   ),
   lg: (
     height: 4.4rem,
     padding: 1.2rem 2.4rem,
-    font-size: 1.8rem
+    font-size: 1.8rem,
   ),
   xl: (
     height: 5rem,
     padding: 1.4rem 2.8rem,
-    font-size: 2rem
-  )
+    font-size: 2rem,
+  ),
 );
 
 // =================================================
@@ -228,7 +227,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px
+  xxl: 1600px,
 ) !default;
 
 // =================================================
@@ -258,7 +257,7 @@ $loader-speeds: (
   slow: 1.3s,
   normal: 1s,
   fast: 0.8s,
-  fastest: 0.4s
+  fastest: 0.4s,
 );
 $loader-base-size: 0px;
 $loader-spinner-size: 40px;
@@ -266,6 +265,8 @@ $loader-dots-size: 60px;
 $loader-bars-size: 40px;
 $loader-pulse-size: 2.16rem;
 $loader-bars-amount: 5;
+$loader-background: rgb(52 58 64 / 20%);
+$loader-background-dark: rgb(203 197 191 / 20%);
 
 // =================================================
 // Generic Utilities Variables
@@ -278,14 +279,14 @@ $spacers: (
   2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.5,
-  5: $spacer * 3
+  5: $spacer * 3,
 ) !default;
 
 // Reusable Variables
 $common-values: map.merge(
   $spacers,
   (
-    auto: auto
+    auto: auto,
   )
 );
 
@@ -297,5 +298,5 @@ $dimension-values: (
   screen: 100vh,
   min: min-content,
   max: max-content,
-  fit: fit-content
+  fit: fit-content,
 );
