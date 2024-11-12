@@ -1,0 +1,90 @@
+// Form controls
+// =================================================
+
+select,
+textarea,
+input:not([type]),
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="week"] {
+  appearance: none;
+  background-color: #{$control-bg};
+  font-family: inherit;
+  font-size: #{$control-font-size};
+  color: inherit;
+  border: #{$control-border-width} solid #{$control-border-color};
+  border-radius: #{$control-border-radius};
+  outline: transparent !important;
+  box-shadow: none;
+  box-sizing: inherit;
+  height: #{$control-height};
+  width: #{$control-width};
+  padding: #{$control-padding};
+  margin: #{$control-margin};
+  letter-spacing: 1px !important;
+
+  &:focus {
+    border-color: #{$control-focus-border-color};
+  }
+}
+
+input[type="color"] {
+  height: #{$color-height};
+  width: #{$color-width};
+  padding: 0 #{$color-padding} !important;
+}
+
+select {
+  background: #{$select-indicator} center right no-repeat;
+  padding-right: #{$select-padding-right};
+
+  &[multiple] {
+    background: none;
+    height: auto;
+  }
+}
+
+textarea {
+  min-height: #{$textarea-min-height};
+  max-height: #{$textarea-max-height};
+  resize: #{$textarea-resize} !important;
+}
+
+.label,
+label,
+legend {
+  display: block;
+  font-size: #{$label-font-size};
+  font-weight: #{$label-font-weight};
+  margin-bottom: #{$label-margin};
+
+  &.inline {
+    display: inline-block !important;
+    font-weight: normal;
+    margin-left: #{$label-margin};
+  }
+}
+
+fieldset {
+  border-width: #{$fieldset-border-width};
+  padding: #{$fieldset-padding};
+  margin: #{$fieldset-margin};
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: #{$checkbox-size};
+  height: #{$checkbox-size};
+  margin: auto 0;
+}

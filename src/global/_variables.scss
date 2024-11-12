@@ -211,6 +211,50 @@ $button-sizes: (
 );
 
 // =================================================
+// Forms
+// =================================================
+
+// Input
+$control-bg: transparent;
+$control-border-width: 0.2rem;
+$control-border-color: $secondary;
+$control-border-radius: 0.4rem;
+$control-font-size: 1.8rem;
+$control-height: 4.6rem;
+$control-width: 100%;
+$control-padding: 0.6rem 1rem;
+$control-margin: 0 0 1.6rem 0;
+$control-focus-border-color: $primary;
+
+// Color Input
+$color-height: $control-height;
+$color-width: 4.6rem;
+$color-padding: 0.3rem;
+
+// Checkbox Input
+$checkbox-size: 1.6rem;
+
+// Select
+$select-padding-right: 3rem;
+$select-indicator-color: $dark;
+$select-indicator: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path d="M0,0l6,8l6-8" fill="%234d4d4d"/></svg>');
+
+// Textarea
+$textarea-min-height: 6.5rem;
+$textarea-max-height: 16rem;
+$textarea-resize: vertical;
+
+// Label
+$label-font-size: 1.8rem;
+$label-font-weight: 700;
+$label-margin: 0.6rem;
+
+// Fieldset
+$fieldset-border-width: 0;
+$fieldset-padding: 0;
+$fieldset-margin: 0;
+
+// =================================================
 // Grid System Variables
 // Includes the sizing and allowed breakpoints
 // =================================================
