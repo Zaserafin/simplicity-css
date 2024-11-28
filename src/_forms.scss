@@ -108,3 +108,28 @@ input[type="radio"] {
   height: #{$checkbox-size};
   margin: auto 0;
 }
+
+.floating-label {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition:
+      top 200ms ease,
+      font-size 200ms ease;
+  }
+
+  input::placeholder {
+    color: transparent;
+  }
+
+  &:has(input:focus) label,
+  &:has(input:not(:placeholder-shown)) label {
+    font-size: 1.4rem;
+    top: -2rem;
+  }
+}
