@@ -36,6 +36,26 @@ input[type="week"] {
   &:focus {
     border-color: #{$control-focus-border-color};
   }
+
+  &.invalid {
+    border-color: #{use-css-variable(danger)};
+  }
+
+  &.valid {
+    border-color: #{use-css-variable(success)};
+  }
+
+  &:has(+ .error) {
+    margin-bottom: 0;
+  }
+}
+
+.error {
+  display: block;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  color: #{use-css-variable(danger)};
+  font-weight: bolder;
 }
 
 input[type="color"] {
