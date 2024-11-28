@@ -376,17 +376,28 @@
         <form action="javascript: void(0)">
           <fieldset>
             <label for="nameField">Nombre</label>
-            <input id="nameField" type="text" placeholder="Escribe tú nombre" />
+            <input
+              class="invalid"
+              id="nameField"
+              type="text"
+              placeholder="Escribe tú nombre"
+            />
+            <span class="error">Esto es un error en un input</span>
 
             <label for="lastNameField">Apellido</label>
             <input
+              class="valid"
               id="lastNameField"
               type="text"
               placeholder="Escribe tú apellido"
             />
 
             <label for="ageField">Edad</label>
-            <input id="ageField" type="number" placeholder="Escribe tu mensaje.." />
+            <input
+              id="ageField"
+              type="number"
+              placeholder="Escribe tu mensaje.."
+            />
 
             <label for="text-area">Mensaje</label>
             <textarea
