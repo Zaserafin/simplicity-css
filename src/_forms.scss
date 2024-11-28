@@ -33,6 +33,10 @@ input[type="week"] {
   margin: #{$control-margin};
   letter-spacing: 1px !important;
 
+  &::placeholder {
+    color: #{use-css-variable(secondary)};
+  }
+
   &:focus {
     border-color: #{$control-focus-border-color};
   }
@@ -125,6 +129,14 @@ input[type="radio"] {
 
   input::placeholder {
     color: transparent;
+  }
+
+  @if $floating-show-placeholder == true {
+    &:has(input:focus) {
+      input::placeholder {
+        color: #{use-css-variable(secondary)};
+      }
+    }
   }
 
   &:has(input:focus) label,
