@@ -33,6 +33,10 @@ input[type="week"] {
   margin: #{$control-margin};
   letter-spacing: 1px !important;
 
+  &::placeholder {
+    color: #{use-css-variable(secondary)};
+  }
+
   &:focus {
     border-color: #{$control-focus-border-color};
   }
@@ -107,4 +111,37 @@ input[type="radio"] {
   width: #{$checkbox-size};
   height: #{$checkbox-size};
   margin: auto 0;
+}
+
+.floating-label {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition:
+      top 200ms ease,
+      font-size 200ms ease;
+  }
+
+  input::placeholder {
+    color: transparent;
+  }
+
+  @if $floating-show-placeholder == true {
+    &:has(input:focus) {
+      input::placeholder {
+        color: #{use-css-variable(secondary)};
+      }
+    }
+  }
+
+  &:has(input:focus) label,
+  &:has(input:not(:placeholder-shown)) label {
+    font-size: 1.4rem;
+    top: -2rem;
+  }
 }
