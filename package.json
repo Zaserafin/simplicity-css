@@ -5,7 +5,7 @@
   "main": "dist/simplicity.css",
   "scripts": {
     "autoprefixer": "postcss -u autoprefixer --no-map.inline --autoprefixer.browsers \"last 1 versions\" -r \"dist/css/*.css\" \"!dist/css/*.min.css\"",
-    "sass:compile": "sass --no-source-map --style=expanded src:dist/css",
+    "sass:compile": "sass --no-source-map --style=compressed src:dist/css",
     "sass:watch": "sass --watch --no-source-map --style=expanded src:dist/css",
     "sass:minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
     "sass:lint": "npx stylelint \"**/*.scss\" --fix",

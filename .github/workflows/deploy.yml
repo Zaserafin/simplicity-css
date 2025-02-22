@@ -1,0 +1,36 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Compilar la librería
+        run: npm run build
+
+      - name: Copiar estilos a la documentación
+        run: cp -r dist/* docs/css/
+
+      - name: Configurar GitHub Pages
+        run: echo "docs" > .gitignore
+
+      - name: Deploy a GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs # Solo sube la carpeta `docs`
+          clean: true # Elimina archivos antiguos en `gh-pages`
