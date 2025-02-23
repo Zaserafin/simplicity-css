@@ -357,6 +357,17 @@ $border-values: (
   5: 1.3rem,
 );
 
+// Common display values
+$display-values: (
+  grid: grid,
+  flex: flex,
+  block: block,
+  inline-flex: inline-flex,
+  inline-block: inline-block,
+  table: table,
+  none: none,
+);
+
 // Common values of widths and heights
 // TODO: Implement fixed size values
 $dimension-values: (

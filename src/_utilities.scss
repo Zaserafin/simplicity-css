@@ -1,7 +1,12 @@
 @use "sass:map";
 
-// Common values of border sizes
-
+$displays: (
+  "display": (
+    properties: display,
+    selector: d,
+    values: $display-values,
+  ),
+);
 $border-radius: (
   "border-radius": (
     properties: border-radius,
@@ -169,6 +174,7 @@ $margins: (
 );
 $utilities: () !default;
 $utilities: map-merge-multiple(
+  $displays,
   $border-radius,
   $borders,
   $border-color,
