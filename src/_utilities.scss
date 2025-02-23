@@ -2,6 +2,43 @@
 
 // TODO: Move each utils to its own file
 
+$sizing: (
+  "height": (
+    properties: height,
+    selector: h,
+    values: $dimension-values,
+  ),
+  "min-height": (
+    properties: min-height,
+    selector: min-h,
+    values: $dimension-values,
+  ),
+  "max-height": (
+    properties: max-height,
+    selector: max-h,
+    values: $dimension-values,
+  ),
+  "width": (
+    properties: width,
+    selector: w,
+    values: $dimension-values,
+  ),
+  "min-width": (
+    properties: min-width,
+    selector: min-w,
+    values: $dimension-values,
+  ),
+  "max-width": (
+    properties: max-width,
+    selector: max-w,
+    values: $dimension-values,
+  ),
+  "sizes": (
+    properties: width height,
+    selector: size,
+    values: $spacers,
+  ),
+);
 $displays: (
   "display": (
     properties: display,
@@ -240,6 +277,7 @@ $margins: (
 );
 $utilities: () !default;
 $utilities: map-merge-multiple(
+  $sizing,
   $displays,
   $flex,
   $gap,
