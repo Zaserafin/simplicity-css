@@ -56,6 +56,23 @@ $flex: (
     values: $align-self-values,
   ),
 );
+$gap: (
+  "gap": (
+    properties: gap,
+    selector: gap,
+    values: $spacers,
+  ),
+  "row-gap": (
+    properties: row-gap,
+    selector: gap-y,
+    values: $spacers,
+  ),
+  "column-gap": (
+    properties: column-gap,
+    selector: gap-x,
+    values: $spacers,
+  ),
+);
 $border-radius: (
   "border-radius": (
     properties: border-radius,
@@ -225,6 +242,7 @@ $utilities: () !default;
 $utilities: map-merge-multiple(
   $displays,
   $flex,
+  $gap,
   $border-radius,
   $borders,
   $border-color,
