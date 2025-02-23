@@ -1,5 +1,98 @@
 @use "sass:map";
 
+// Common values of border sizes
+
+$border-radius: (
+  "border-radius": (
+    properties: border-radius,
+    selector: rounded,
+    values: $radius-values,
+  ),
+  "border-top-left-radius": (
+    properties: border-top-left-radius,
+    selector: rounded-tl,
+    values: $radius-values,
+  ),
+  "border-top-right-radius": (
+    properties: border-top-right-radius,
+    selector: rounded-tr,
+    values: $radius-values,
+  ),
+  "border-bottom-left-radius": (
+    properties: border-bottom-left-radius,
+    selector: rounded-bl,
+    values: $radius-values,
+  ),
+  "border-bottom-right-radius": (
+    properties: border-bottom-right-radius,
+    selector: rounded-br,
+    values: $radius-values,
+  ),
+  "border-top-radius": (
+    properties: border-top-left-radius border-top-right-radius,
+    selector: rounded-t,
+    values: $radius-values,
+  ),
+  "border-bottom-radius": (
+    properties: border-bottom-left-radius border-bottom-right-radius,
+    selector: rounded-b,
+    values: $radius-values,
+  ),
+  "border-left-radius": (
+    properties: border-top-left-radius border-bottom-left-radius,
+    selector: rounded-l,
+    values: $radius-values,
+  ),
+  "border-right-radius": (
+    properties: border-top-right-radius border-bottom-right-radius,
+    selector: rounded-r,
+    values: $radius-values,
+  ),
+);
+$borders: (
+  "border": (
+    properties: border-width,
+    selector: border,
+    values: $border-values,
+  ),
+  "border-y": (
+    properties: border-top-width border-bottom-width,
+    selector: border-y,
+    values: $border-values,
+  ),
+  "border-x": (
+    properties: border-right-width border-left-width,
+    selector: border-x,
+    values: $border-values,
+  ),
+  "border-t": (
+    properties: border-top-width,
+    selector: border-t,
+    values: $border-values,
+  ),
+  "border-e": (
+    properties: border-right-width,
+    selector: border-e,
+    values: $border-values,
+  ),
+  "border-b": (
+    properties: border-bottom-width,
+    selector: border-b,
+    values: $border-values,
+  ),
+  "border-s": (
+    properties: border-left-width,
+    selector: border-s,
+    values: $border-values,
+  ),
+);
+$border-color: (
+  "border-color": (
+    properties: border-color,
+    selector: border,
+    values: $colors,
+  ),
+);
 $paddings: (
   "padding": (
     properties: padding,
@@ -75,4 +168,11 @@ $margins: (
   ),
 );
 $utilities: () !default;
-$utilities: map-merge-multiple($paddings, $margins, $utilities);
+$utilities: map-merge-multiple(
+  $border-radius,
+  $borders,
+  $border-color,
+  $paddings,
+  $margins,
+  $utilities
+);
