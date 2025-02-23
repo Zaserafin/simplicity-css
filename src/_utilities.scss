@@ -275,6 +275,57 @@ $margins: (
     values: $spacers-with-auto,
   ),
 );
+$text: (
+  "font-style": (
+    properties: font-style,
+    selector: text,
+    values: (
+      normal: normal,
+      italic: italic,
+      oblique: oblique,
+    ),
+  ),
+  "font-weight": (
+    properties: font-weight,
+    selector: font,
+    values: (
+      light: 300,
+      normal: 400,
+      bold: 500,
+      bolder: 700,
+      extrabold: 800,
+    ),
+  ),
+  "text-decoration": (
+    properties: text-decoration,
+    selector: text,
+    values: (
+      underline: underline,
+      overline: overline,
+      line-through: line-through,
+    ),
+  ),
+  "text-align": (
+    properties: text-align,
+    selector: text,
+    values: (
+      left: left,
+      right: right,
+      center: center,
+      justify: justify,
+      pretty: pretty,
+    ),
+  ),
+  "text-transform": (
+    properties: text-transform,
+    selector: text,
+    values: (
+      capitalize: capitalize,
+      uppercase: uppercase,
+      lowercase: lowercase,
+    ),
+  ),
+);
 $utilities: () !default;
 $utilities: map-merge-multiple(
   $sizing,
@@ -286,5 +337,6 @@ $utilities: map-merge-multiple(
   $border-color,
   $paddings,
   $margins,
-  $utilities
+  $utilities,
+  $text
 );
