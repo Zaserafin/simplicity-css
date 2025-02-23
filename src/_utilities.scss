@@ -1,1 +1,78 @@
-// remove utilities module for future rebuild
+@use "sass:map";
+
+$paddings: (
+  "padding": (
+    properties: padding,
+    selector: p,
+    values: $spacers,
+  ),
+  "padding-x": (
+    properties: padding-left padding-right,
+    selector: px,
+    values: $spacers,
+  ),
+  "padding-y": (
+    properties: padding-top padding-bottom,
+    selector: py,
+    values: $spacers,
+  ),
+  "padding-top": (
+    properties: padding-top,
+    selector: pt,
+    values: $spacers,
+  ),
+  "padding-end": (
+    properties: padding-right,
+    selector: pe,
+    values: $spacers,
+  ),
+  "padding-bottom": (
+    properties: padding-bottom,
+    selector: pb,
+    values: $spacers,
+  ),
+  "padding-start": (
+    properties: padding-left,
+    selector: ps,
+    values: $spacers,
+  ),
+);
+$margins: (
+  "margin": (
+    properties: margin,
+    selector: m,
+    values: $spacers-with-auto,
+  ),
+  "margin-x": (
+    properties: margin-left margin-right,
+    selector: mx,
+    values: $spacers-with-auto,
+  ),
+  "margin-y": (
+    properties: margin-top margin-bottom,
+    selector: my,
+    values: $spacers-with-auto,
+  ),
+  "margin-top": (
+    properties: margin-top,
+    selector: mt,
+    values: $spacers-with-auto,
+  ),
+  "margin-end": (
+    properties: margin-right,
+    selector: me,
+    values: $spacers-with-auto,
+  ),
+  "margin-bottom": (
+    properties: margin-bottom,
+    selector: mb,
+    values: $spacers-with-auto,
+  ),
+  "margin-start": (
+    properties: margin-left,
+    selector: ms,
+    values: $spacers-with-auto,
+  ),
+);
+$utilities: () !default;
+$utilities: map-merge-multiple($paddings, $margins, $utilities);

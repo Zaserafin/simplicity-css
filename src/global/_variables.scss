@@ -328,9 +328,7 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
 ) !default;
-
-// Reusable Variables
-$common-values: map.merge(
+$spacers-with-auto: map.merge(
   $spacers,
   (
     auto: auto,

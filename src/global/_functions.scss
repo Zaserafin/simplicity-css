@@ -131,3 +131,22 @@
 @function get-breakpoint-suffix($name, $breakpoints) {
   @return if(get-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
+
+// ====================================================
+// Function: map-merge-multiple
+// Description: Merges multiple Sass maps into a single map.
+// Parameters:
+//   - $maps...: A list of maps to be merged.
+//               If keys are duplicated, the last map's value is used.
+// Returns: A single merged map containing all key-value pairs
+//          from the provided maps.
+// ====================================================
+@function map-merge-multiple($maps...) {
+  $merged-maps: (); // Initialize an empty map
+
+  @each $map in $maps {
+    $merged-maps: map.merge($merged-maps, $map); // Initialize an empty map
+  }
+
+  @return $merged-maps;
+}

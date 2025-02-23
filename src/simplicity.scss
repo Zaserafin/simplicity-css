@@ -19,7 +19,6 @@
 
 @import "./root";
 @import "./base";
-@import "./utilities";
 @import "./loaders";
 @import "./colors";
 @import "./containers";
@@ -28,3 +27,9 @@
 @import "./grid";
 @import "./tables";
 @import "./forms";
+
+// Utilities Config
+@import "./utilities";
+
+// Utilities generator
+@import "utilities/generator";
