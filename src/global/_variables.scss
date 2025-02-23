@@ -368,6 +368,74 @@ $display-values: (
   none: none,
 );
 
+// Common flex values
+$flex-values: (
+  1: 1,
+  initial: 0 auto,
+  auto: auto,
+  none: none,
+);
+
+// Common flex direction values
+$direction-values: (
+  row: row,
+  col: column,
+  row-reverse: row-reverse,
+  col-reverse: column-reverse,
+);
+
+// Common flex wrap values
+$wrap-values: (
+  wrap: wrap,
+  nowrap: nowrap,
+  wrap-reverse: wrap-reverse,
+);
+
+// Common justify-content values
+$justify-values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+// Common align-items values
+$align-items-values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+// Common align-content values
+$align-content-values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+);
+
+// Common align-self values
+$align-self-values: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);
+
+// Common 0-1 values for utilities
+$binary-values: (
+  0: 0,
+  1: 1,
+);
+
 // Common values of widths and heights
 // TODO: Implement fixed size values
 $dimension-values: (

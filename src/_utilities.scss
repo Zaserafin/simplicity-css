@@ -1,10 +1,59 @@
 @use "sass:map";
 
+// TODO: Move each utils to its own file
+
 $displays: (
   "display": (
     properties: display,
     selector: d,
     values: $display-values,
+  ),
+);
+$flex: (
+  "flex": (
+    properties: flex,
+    selector: flex,
+    values: $flex-values,
+  ),
+  "flex-direction": (
+    properties: flex-direction,
+    selector: flex,
+    values: $direction-values,
+  ),
+  "flex-grow": (
+    properties: flex-grow,
+    selector: grow,
+    values: $binary-values,
+  ),
+  "flex-shrink": (
+    properties: flex-shrink,
+    selector: shrink,
+    values: $binary-values,
+  ),
+  "flex-wrap": (
+    properties: flex-wrap,
+    selector: flex,
+    values: $wrap-values,
+  ),
+  "justify-content": (
+    properties: justify-content,
+    selector: justify,
+    values: $justify-values,
+  ),
+  "align-items": (
+    properties: align-items,
+    selector: items,
+    values: $align-items-values,
+  ),
+  "align-content": (
+    properties: align-content,
+    selector: content,
+    values: $align-content-values,
+  ),
+  "align-self": (
+    properties: align-self,
+    selector: self,
+    values: $align-self-values,
   ),
 );
 $border-radius: (
@@ -175,6 +224,7 @@ $margins: (
 $utilities: () !default;
 $utilities: map-merge-multiple(
   $displays,
+  $flex,
   $border-radius,
   $borders,
   $border-color,
