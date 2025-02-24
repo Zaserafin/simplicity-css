@@ -1,9 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es-ar" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simplicity CSS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    />
+
     <link rel="stylesheet" href="dist/css/simplicity.css" />
 
     <style>
@@ -16,7 +21,21 @@
     </style>
   </head>
   <body>
-    <button id="toggle-theme" class="primary m-4">Change theme</button>
+    <header class="min-h-screen d-flex items-center justify-center text-center">
+      <div class="container d-flex flex-col">
+        <h1>Simplicity</h1>
+        <p>It's the simplicity css framework</p>
+
+        <div class="d-flex items-center justify-center gap-3 mt-4">
+          <a href="#getting-started" class="btn primary"> Getting Started </a>
+
+          <button id="toggle-theme" class="tertiary outlined">
+            Change theme
+          </button>
+        </div>
+      </div>
+    </header>
+
     <article class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0">
       <h3>Color Utilities:</h3>
       <hr />
@@ -48,18 +67,18 @@
       </section>
       <section>
         <h3>Opacities:</h3>
-        <div class="d-flex flex-wrap">
-          <div class="opacity-100 p-3 m-2 bg-primary text-light">100%</div>
-          <div class="opacity-90 p-3 m-2 bg-primary text-light">90%</div>
-          <div class="opacity-80 p-3 m-2 bg-primary text-light">80%</div>
-          <div class="opacity-70 p-3 m-2 bg-primary text-light">70%</div>
-          <div class="opacity-60 p-3 m-2 bg-primary text-light">60%</div>
-          <div class="opacity-50 p-3 m-2 bg-primary text-light">50%</div>
-          <div class="opacity-40 p-3 m-2 bg-primary text-light">40%</div>
-          <div class="opacity-30 p-3 m-2 bg-primary text-light">30%</div>
-          <div class="opacity-20 p-3 m-2 bg-primary text-light">20%</div>
-          <div class="opacity-10 p-3 m-2 bg-primary text-light">10%</div>
-          <div class="opacity-0 p-3 m-2 bg-primary text-light">0%</div>
+        <div class="d-flex flex-wrap gap-x-2">
+          <div class="opacity-100 p-3 bg-primary text-light">100%</div>
+          <div class="opacity-90 p-3 bg-primary text-light">90%</div>
+          <div class="opacity-80 p-3 bg-primary text-light">80%</div>
+          <div class="opacity-70 p-3 bg-primary text-light">70%</div>
+          <div class="opacity-60 p-3 bg-primary text-light">60%</div>
+          <div class="opacity-50 p-3 bg-primary text-light">50%</div>
+          <div class="opacity-40 p-3 bg-primary text-light">40%</div>
+          <div class="opacity-30 p-3 bg-primary text-light">30%</div>
+          <div class="opacity-20 p-3 bg-primary text-light">20%</div>
+          <div class="opacity-10 p-3 bg-primary text-light">10%</div>
+          <div class="opacity-0 p-3 bg-primary text-light">0%</div>
         </div>
       </section>
     </article>
@@ -290,7 +309,7 @@
           <span class="sr-only">Loading...</span>
         </div>
 
-        <div class="bars-loader text-dark fast" aria-busy="true">
+        <div class="bars-loader text-dark" aria-busy="true">
           <div></div>
           <div></div>
           <div></div>

@@ -1,0 +1,28 @@
+@use "sass:map";
+
+@each $breakpoint in map.keys($grid-breakpoints) {
+  $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
+
+  // Generate a reposive content utility
+  @include responsive-content($breakpoint, $grid-breakpoints) {
+    // Maps every utility
+    @each $key, $utility in $utilities {
+      $properties: map.get($utility, properties);
+      $selector: map.get($utility, selector);
+      $values: map.get($utility, values);
+
+      @each $index, $value in $values {
+        $breakpoint-suffix: get-breakpoint-suffix(
+          $breakpoint,
+          $grid-breakpoints
+        );
+
+        .#{$selector}#{$breakpoint-suffix}-#{$index} {
+          @each $property in $properties {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  }
+}

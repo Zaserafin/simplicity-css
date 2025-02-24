@@ -1,36 +1,342 @@
-@import "./utilities/borders";
-@import "./utilities/displays";
-@import "./utilities/grid";
-@import "./utilities/gaps";
-@import "./utilities/heights";
-@import "./utilities/margins";
-@import "./utilities/paddings";
-@import "./utilities/typography";
-@import "./utilities/widths";
+@use "sass:map";
 
-// Generate Borders Utilitites
-@include generate-utility($borders);
+// TODO: Move each utils to its own file
 
-// Generate Display Utilitites
-@include generate-utility($displays);
-
-// Generate Gap Utilities
-@include generate-utility($gaps);
-
-// Generate Height Utiltie
-@include generate-utility($heights);
-
-// Generate Margin Utilities
-@include generate-utility($margins);
-
-// Generate Padding Utilities
-@include generate-utility($paddings);
-
-// Generate Typography Utilities
-@include generate-utility($typography);
-
-// Generate Width Utilities
-@include generate-utility($widths);
-
-// Generate Grid Utilities
-@include generate-utility($grid);
+$sizing: (
+  "height": (
+    properties: height,
+    selector: h,
+    values: $dimension-values,
+  ),
+  "min-height": (
+    properties: min-height,
+    selector: min-h,
+    values: $dimension-values,
+  ),
+  "max-height": (
+    properties: max-height,
+    selector: max-h,
+    values: $dimension-values,
+  ),
+  "width": (
+    properties: width,
+    selector: w,
+    values: $dimension-values,
+  ),
+  "min-width": (
+    properties: min-width,
+    selector: min-w,
+    values: $dimension-values,
+  ),
+  "max-width": (
+    properties: max-width,
+    selector: max-w,
+    values: $dimension-values,
+  ),
+  "sizes": (
+    properties: width height,
+    selector: size,
+    values: $spacers,
+  ),
+);
+$displays: (
+  "display": (
+    properties: display,
+    selector: d,
+    values: $display-values,
+  ),
+);
+$flex: (
+  "flex": (
+    properties: flex,
+    selector: flex,
+    values: $flex-values,
+  ),
+  "flex-direction": (
+    properties: flex-direction,
+    selector: flex,
+    values: $direction-values,
+  ),
+  "flex-grow": (
+    properties: flex-grow,
+    selector: grow,
+    values: $binary-values,
+  ),
+  "flex-shrink": (
+    properties: flex-shrink,
+    selector: shrink,
+    values: $binary-values,
+  ),
+  "flex-wrap": (
+    properties: flex-wrap,
+    selector: flex,
+    values: $wrap-values,
+  ),
+  "justify-content": (
+    properties: justify-content,
+    selector: justify,
+    values: $justify-values,
+  ),
+  "align-items": (
+    properties: align-items,
+    selector: items,
+    values: $align-items-values,
+  ),
+  "align-content": (
+    properties: align-content,
+    selector: content,
+    values: $align-content-values,
+  ),
+  "align-self": (
+    properties: align-self,
+    selector: self,
+    values: $align-self-values,
+  ),
+);
+$gap: (
+  "gap": (
+    properties: gap,
+    selector: gap,
+    values: $spacers,
+  ),
+  "row-gap": (
+    properties: row-gap,
+    selector: gap-y,
+    values: $spacers,
+  ),
+  "column-gap": (
+    properties: column-gap,
+    selector: gap-x,
+    values: $spacers,
+  ),
+);
+$border-radius: (
+  "border-radius": (
+    properties: border-radius,
+    selector: rounded,
+    values: $radius-values,
+  ),
+  "border-top-left-radius": (
+    properties: border-top-left-radius,
+    selector: rounded-tl,
+    values: $radius-values,
+  ),
+  "border-top-right-radius": (
+    properties: border-top-right-radius,
+    selector: rounded-tr,
+    values: $radius-values,
+  ),
+  "border-bottom-left-radius": (
+    properties: border-bottom-left-radius,
+    selector: rounded-bl,
+    values: $radius-values,
+  ),
+  "border-bottom-right-radius": (
+    properties: border-bottom-right-radius,
+    selector: rounded-br,
+    values: $radius-values,
+  ),
+  "border-top-radius": (
+    properties: border-top-left-radius border-top-right-radius,
+    selector: rounded-t,
+    values: $radius-values,
+  ),
+  "border-bottom-radius": (
+    properties: border-bottom-left-radius border-bottom-right-radius,
+    selector: rounded-b,
+    values: $radius-values,
+  ),
+  "border-left-radius": (
+    properties: border-top-left-radius border-bottom-left-radius,
+    selector: rounded-l,
+    values: $radius-values,
+  ),
+  "border-right-radius": (
+    properties: border-top-right-radius border-bottom-right-radius,
+    selector: rounded-r,
+    values: $radius-values,
+  ),
+);
+$borders: (
+  "border": (
+    properties: border-width,
+    selector: border,
+    values: $border-values,
+  ),
+  "border-y": (
+    properties: border-top-width border-bottom-width,
+    selector: border-y,
+    values: $border-values,
+  ),
+  "border-x": (
+    properties: border-right-width border-left-width,
+    selector: border-x,
+    values: $border-values,
+  ),
+  "border-t": (
+    properties: border-top-width,
+    selector: border-t,
+    values: $border-values,
+  ),
+  "border-e": (
+    properties: border-right-width,
+    selector: border-e,
+    values: $border-values,
+  ),
+  "border-b": (
+    properties: border-bottom-width,
+    selector: border-b,
+    values: $border-values,
+  ),
+  "border-s": (
+    properties: border-left-width,
+    selector: border-s,
+    values: $border-values,
+  ),
+);
+$border-color: (
+  "border-color": (
+    properties: border-color,
+    selector: border,
+    values: $colors,
+  ),
+);
+$paddings: (
+  "padding": (
+    properties: padding,
+    selector: p,
+    values: $spacers,
+  ),
+  "padding-x": (
+    properties: padding-left padding-right,
+    selector: px,
+    values: $spacers,
+  ),
+  "padding-y": (
+    properties: padding-top padding-bottom,
+    selector: py,
+    values: $spacers,
+  ),
+  "padding-top": (
+    properties: padding-top,
+    selector: pt,
+    values: $spacers,
+  ),
+  "padding-end": (
+    properties: padding-right,
+    selector: pe,
+    values: $spacers,
+  ),
+  "padding-bottom": (
+    properties: padding-bottom,
+    selector: pb,
+    values: $spacers,
+  ),
+  "padding-start": (
+    properties: padding-left,
+    selector: ps,
+    values: $spacers,
+  ),
+);
+$margins: (
+  "margin": (
+    properties: margin,
+    selector: m,
+    values: $spacers-with-auto,
+  ),
+  "margin-x": (
+    properties: margin-left margin-right,
+    selector: mx,
+    values: $spacers-with-auto,
+  ),
+  "margin-y": (
+    properties: margin-top margin-bottom,
+    selector: my,
+    values: $spacers-with-auto,
+  ),
+  "margin-top": (
+    properties: margin-top,
+    selector: mt,
+    values: $spacers-with-auto,
+  ),
+  "margin-end": (
+    properties: margin-right,
+    selector: me,
+    values: $spacers-with-auto,
+  ),
+  "margin-bottom": (
+    properties: margin-bottom,
+    selector: mb,
+    values: $spacers-with-auto,
+  ),
+  "margin-start": (
+    properties: margin-left,
+    selector: ms,
+    values: $spacers-with-auto,
+  ),
+);
+$text: (
+  "font-style": (
+    properties: font-style,
+    selector: text,
+    values: (
+      normal: normal,
+      italic: italic,
+      oblique: oblique,
+    ),
+  ),
+  "font-weight": (
+    properties: font-weight,
+    selector: font,
+    values: (
+      light: 300,
+      normal: 400,
+      bold: 500,
+      bolder: 700,
+      extrabold: 800,
+    ),
+  ),
+  "text-decoration": (
+    properties: text-decoration,
+    selector: text,
+    values: (
+      underline: underline,
+      overline: overline,
+      line-through: line-through,
+    ),
+  ),
+  "text-align": (
+    properties: text-align,
+    selector: text,
+    values: (
+      left: left,
+      right: right,
+      center: center,
+      justify: justify,
+      pretty: pretty,
+    ),
+  ),
+  "text-transform": (
+    properties: text-transform,
+    selector: text,
+    values: (
+      capitalize: capitalize,
+      uppercase: uppercase,
+      lowercase: lowercase,
+    ),
+  ),
+);
+$utilities: () !default;
+$utilities: map-merge-multiple(
+  $sizing,
+  $displays,
+  $flex,
+  $gap,
+  $border-radius,
+  $borders,
+  $border-color,
+  $paddings,
+  $margins,
+  $utilities,
+  $text
+);
