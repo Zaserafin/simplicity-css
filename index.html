@@ -4,9 +4,610 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simplicity CSS</title>
-    <link rel="stylesheet" href="https://zaserafin.github.io/simplicity-css/css/simplicity.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://zaserafin.github.io/simplicity-css/css/simplicity.min.css"
+    />
   </head>
   <body>
-    <h1>Simplicity CSS</h1>
+    <header class="min-h-screen d-flex items-center justify-center text-center">
+      <div class="container d-flex flex-col">
+        <h1>Simplicity</h1>
+        <p>It's the simplicity css framework</p>
+
+        <div class="d-flex items-center justify-center gap-3 mt-4">
+          <a href="#getting-started" class="btn primary"> Getting Started </a>
+
+          <button id="toggle-theme" class="tertiary outlined">
+            Change theme
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <article class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0">
+      <h3>Color Utilities:</h3>
+      <hr />
+      <section>
+        <h3>Text Colors:</h3>
+        <h4 class="text-primary">Primary Color</h4>
+        <h4 class="text-secondary">Secondary Color</h4>
+        <h4 class="text-tertiary">Tertiary Color</h4>
+        <h4 class="text-quaternary">Quaternary Color</h4>
+        <h4 class="text-warning">Warning Color</h4>
+        <h4 class="text-danger">Danger Color</h4>
+        <h4 class="text-success">Success Color</h4>
+        <h4 class="text-dark">Dark Color</h4>
+        <h4 class="text-light">Dark Color</h4>
+      </section>
+      <section>
+        <h3>Background Colors:</h3>
+        <div class="d-grid grid-cols-3 gap-x-2">
+          <h4 class="bg-primary rounded-lg px-3 py-2">Primary Color</h4>
+          <h4 class="bg-secondary rounded-lg px-3 py-2">Secondary Color</h4>
+          <h4 class="bg-tertiary rounded-lg px-3 py-2">Tertiary Color</h4>
+          <h4 class="bg-quaternary rounded-lg px-3 py-2">Quaternary Color</h4>
+          <h4 class="bg-warning rounded-lg px-3 py-2">Warning Color</h4>
+          <h4 class="bg-danger rounded-lg px-3 py-2">Danger Color</h4>
+          <h4 class="bg-success rounded-lg px-3 py-2">Success Color</h4>
+          <h4 class="bg-dark rounded-lg px-3 py-2">Dark Color</h4>
+          <h4 class="bg-light rounded-lg px-3 py-2">Light Color</h4>
+        </div>
+      </section>
+      <section>
+        <h3>Opacities:</h3>
+        <div class="d-flex flex-wrap gap-x-2">
+          <div class="opacity-100 p-3 bg-primary text-light">100%</div>
+          <div class="opacity-90 p-3 bg-primary text-light">90%</div>
+          <div class="opacity-80 p-3 bg-primary text-light">80%</div>
+          <div class="opacity-70 p-3 bg-primary text-light">70%</div>
+          <div class="opacity-60 p-3 bg-primary text-light">60%</div>
+          <div class="opacity-50 p-3 bg-primary text-light">50%</div>
+          <div class="opacity-40 p-3 bg-primary text-light">40%</div>
+          <div class="opacity-30 p-3 bg-primary text-light">30%</div>
+          <div class="opacity-20 p-3 bg-primary text-light">20%</div>
+          <div class="opacity-10 p-3 bg-primary text-light">10%</div>
+          <div class="opacity-0 p-3 bg-primary text-light">0%</div>
+        </div>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Buttons:</h3>
+      <hr />
+      <section>
+        <h5>Solid buttons:</h5>
+        <p>
+          <button class="primary">Primary</button>
+          <button class="secondary">Secondary</button>
+          <button class="tertiary">Tertiary</button>
+          <button class="quaternary">Quaternary</button>
+          <button class="danger">Danger</button>
+          <button class="warning">Warning</button>
+          <button class="success">Success</button>
+          <button class="dark">Dark</button>
+        </p>
+      </section>
+
+      <section>
+        <h5>Outlined buttons</h5>
+        <p>
+          <button class="primary outlined">Primary</button>
+          <button class="secondary outlined">Secondary</button>
+          <button class="tertiary outlined">Tertiary</button>
+          <button class="quaternary outlined">Quaternary</button>
+          <button class="danger outlined">Danger</button>
+          <button class="warning outlined">Warning</button>
+          <button class="success outlined">Success</button>
+          <button class="dark outlined">Dark</button>
+        </p>
+      </section>
+
+      <section>
+        <h5>Close Button</h5>
+        <button class="close"></button>
+      </section>
+
+      <section>
+        <h5>Button sizes</h5>
+        <p>
+          <button class="xs primary">Button XS</button>
+          <button class="sm primary">Button SM</button>
+          <button class="md primary">Button MD</button>
+          <button class="lg primary">Button LG</button>
+          <button class="xl primary">Button XL</button>
+        </p>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Typography:</h3>
+      <hr />
+      <section>
+        <h1>h1. Heading</h1>
+        <h2>h2. Heading</h2>
+        <h3>h3. Heading</h3>
+        <h4>h4. Heading</h4>
+        <h5>h5. Heading</h5>
+        <h6>h6. Heading</h6>
+      </section>
+
+      <section>
+        <span class="display-1">Display 1</span>
+        <span class="display-2">Display 2</span>
+        <span class="display-3">Display 3</span>
+        <span class="display-4">Display 4</span>
+        <span class="display-5">Display 5</span>
+        <span class="display-6">Display 6</span>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Loaders</h3>
+      <hr />
+      <small>
+        <i>
+          In order to change the loaders color you need to use the
+          <b>text-[color]</b> utilities or set a color value using css. Because
+          each loader inherits the color from the parent loader selector
+        </i>
+      </small>
+
+      <section>
+        <h5>Spinner Loader:</h5>
+        <div class="spinner-loader text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-tertiary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-quaternary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </section>
+
+      <section>
+        <h5>Dots Loader:</h5>
+        <div class="dots-loader text-primary" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-secondary" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-tertiary" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-quaternary" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-warning" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-danger" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-success" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="dots-loader text-dark" role="status">
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+      </section>
+
+      <section>
+        <h5>Bars Loader:</h5>
+        <div class="bars-loader text-primary" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-secondary" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-tertiary" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-quaternary" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-warning" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-danger" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-success" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+
+        <div class="bars-loader text-dark" aria-busy="true">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <span class="sr-only">Loading...</span>
+        </div>
+      </section>
+
+      <section>
+        <h5>Pulse loaders:</h5>
+
+        <div class="pulse-loader text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-tertiary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-quaternary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="pulse-loader text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </section>
+
+      <section>
+        <h5>Loader Speeds:</h5>
+        <div class="spinner-loader slowest" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader slow" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader normal" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader fast" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-loader fastest" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Grid System</h3>
+      <hr />
+
+      <section class="row">
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary column-md-8"
+          >Column</span
+        >
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+          >Column</span
+        >
+        <span
+          class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
+          >Column</span
+        >
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Forms</h3>
+      <hr />
+      <section>
+        <form action="javascript: void(0)">
+          <fieldset>
+            <div class="floating-label">
+              <label for="nameField">Nombre</label>
+              <input
+                class="invalid"
+                id="nameField"
+                type="text"
+                placeholder="Escribe tú nombre"
+              />
+              <span class="error">Esto es un error en un input</span>
+            </div>
+
+            <label for="lastNameField">Apellido</label>
+            <input
+              class="valid"
+              id="lastNameField"
+              type="text"
+              placeholder="Escribe tú apellido"
+            />
+
+            <label for="ageField">Edad</label>
+            <input
+              id="ageField"
+              type="number"
+              placeholder="Escribe tu mensaje.."
+            />
+
+            <label for="text-area">Mensaje</label>
+            <textarea
+              id="text-area"
+              placeholder="Escribe tu mensaje..."
+            ></textarea>
+
+            <div style="float: right">
+              <input id="workerField" type="checkbox" />
+              <label class="inline" for="workerField"
+                >Usted tiene trabajo?</label
+              >
+            </div>
+
+            <input class="btn primary" type="submit" value="Enviar" />
+          </fieldset>
+        </form>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Tables</h3>
+      <hr />
+      <section>
+        <h4>Normal Table:</h4>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Striped Table:</h4>
+        <div class="table-container">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Bordered Table:</h4>
+        <div class="table-container">
+          <table class="bordered">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Hoverable Table:</h4>
+        <div class="table-container">
+          <table class="hoverable">
+            <thead>
+              <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+
+    <script>
+      document.getElementById("toggle-theme").addEventListener("click", () => {
+        const theme = document.documentElement.dataset.theme;
+        if (theme === "dark") {
+          document.documentElement.dataset.theme = "light";
+        } else {
+          document.documentElement.dataset.theme = "dark";
+        }
+      });
+    </script>
   </body>
 </html>
