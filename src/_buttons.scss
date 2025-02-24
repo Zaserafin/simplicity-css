@@ -35,13 +35,13 @@ button {
   height: #{use-css-variable(btn-height)};
 
   // Applying non customizable styles
+  text-decoration: none;
+  line-height: 1;
   text-align: center;
   cursor: pointer;
   display: inline-block;
   outline: transparent;
-  transition:
-    color 200ms ease,
-    border-color 200ms ease,
+  transition: color 200ms ease, border-color 200ms ease,
     background-color 200ms ease;
 
   // Hover state styles
