@@ -76,9 +76,10 @@ table,
   }
 
   &.bordered {
-    & > thead,
+    & > thead, 
     & > .thead {
       background-color: #{use-css-variable(table-bordered-bg)} !important;
+      color: #{use-css-variable(body-color)} !important;
     }
 
     th,

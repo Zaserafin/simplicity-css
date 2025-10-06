@@ -44,6 +44,7 @@
   #{generate-css-variable-name(table-header-color)}: #{color-contrast($table-header-bg)};
   #{generate-css-variable-name(table-striped-bg)}: #{$table-striped-bg};
   #{generate-css-variable-name(table-bordered-bg)}: #{$table-bordered-bg};
+  #{generate-css-variable-name(table-bordered-color)}: #{color-contrast($table-bordered-bg)};
   #{generate-css-variable-name(table-hoverable-bg)}: #{$table-hoverable-bg};
   #{generate-css-variable-name(table-row-border-style)}: #{$table-row-border-style};
   #{generate-css-variable-name(table-row-border-width)}: #{$table-row-border-width};
