@@ -11,7 +11,8 @@
 }
 
 // Applies styles to base table element
-table {
+table,
+.table {
   vertical-align: top;
   width: 100%;
   text-align: left;
@@ -34,8 +35,10 @@ table {
     background-color: #{use-css-variable(table-header-bg)};
     color: #{use-css-variable(table-header-color)};
 
-    tr {
-      th {
+    tr,
+    .tr {
+      th,
+      .th {
         white-space: nowrap;
       }
     }
@@ -45,12 +48,12 @@ table {
   & > .tbody {
     vertical-align: bottom;
 
-    tr {
-      border-bottom: #{use-css-variable(table-row-border-width)} #{use-css-variable(
-          table-row-border-style
-        )} #{use-css-variable(table-row-border-color)};
+    tr,
+    .tr {
+      border-bottom: #{use-css-variable(table-row-border-width)} #{use-css-variable(table-row-border-style)} #{use-css-variable(table-row-border-color)};
 
-      td {
+      td,
+      .td {
         white-space: nowrap;
       }
 
@@ -63,7 +66,8 @@ table {
   &.striped {
     & > tbody,
     & > .tbody {
-      tr {
+      tr,
+      .tr {
         border: none !important;
 
         &:nth-child(even) {
@@ -80,7 +84,9 @@ table {
     }
 
     th,
-    td {
+    .tr,
+    td,
+    .td {
       border-style: #{use-css-variable(table-row-border-style)};
       border-width: #{use-css-variable(table-row-border-width)};
       border-color: #{use-css-variable(table-row-border-color)};
