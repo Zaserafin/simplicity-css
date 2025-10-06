@@ -10,6 +10,9 @@ $css-var-prefix: simpl;
 // Toggle to allow or disable text selection for users
 $enable-user-select: false;
 
+// Toggle to enable or disable the scroll smooth
+$enable-smooth-behavior: true;
+
 // Used for pills and circle elements
 $border-radius-infinite: 99999px;
 
@@ -314,6 +317,13 @@ $loader-pulse-size: 2.16rem;
 $loader-bars-amount: 5;
 $loader-background: rgb(52 58 64 / 20%);
 $loader-background-dark: rgb(203 197 191 / 20%);
+
+// =================================================
+// Shadow variables
+// =================================================
+
+$shadow-color: #343a40;
+$shadow-color-dark: #f1f1f1;
 
 // =================================================
 // Generic Utilities Variables

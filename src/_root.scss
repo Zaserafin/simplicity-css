@@ -8,7 +8,7 @@
 // ====================================================
 
 :root {
-  // Enable support for light and dark color schemes.
+  // Enable support for light color scheme.
   color-scheme: light;
 
   // Typography settings
@@ -52,6 +52,9 @@
   #{generate-css-variable-name(table-margin-y)}: #{$table-margin};
   #{generate-css-variable-name(table-cell-padding)}: #{$table-cell-padding};
 
+  // Shadow Color
+  #{generate-css-variable-name(shadow-color)}: #{convert-to-rgb($shadow-color)};
+
   // Color palette and RGB equivalents
   @each $name, $color in $colors {
     #{generate-css-variable-name($name)}: #{$color};
@@ -82,18 +85,21 @@
 }
 
 :root[data-theme="dark"] {
+  // Enable support for dark color scheme.
+  color-scheme: dark;
   #{generate-css-variable-name(body-color)}: #{$body-text-color-dark};
   #{generate-css-variable-name(body-background)}: #{$body-bg-color-dark};
 
   // Table vars
   #{generate-css-variable-name(table-header-bg)}: #{$table-header-bg-dark};
-  #{generate-css-variable-name(table-header-color)}: #{color-contrast(
-      $table-header-bg-dark
-    )};
+  #{generate-css-variable-name(table-header-color)}: #{color-contrast($table-header-bg-dark)};
 
   // Close Button
   #{generate-css-variable-name(close-filter)}: invert(1) grayscale(100%) brightness(200%);
-    
+
   // Loaders background
   #{generate-css-variable-name(loader-background)}: #{$loader-background-dark};
+
+  // Shadow Color
+  #{generate-css-variable-name(shadow-color)}: #{convert-to-rgb($shadow-color-dark)};
 }
