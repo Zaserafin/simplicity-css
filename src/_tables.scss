@@ -33,6 +33,12 @@ table {
     vertical-align: bottom;
     background-color: #{use-css-variable(table-header-bg)};
     color: #{use-css-variable(table-header-color)};
+
+    tr {
+      th {
+        white-space: nowrap;
+      }
+    }
   }
 
   & > tbody,
@@ -43,6 +49,10 @@ table {
       border-bottom: #{use-css-variable(table-row-border-width)} #{use-css-variable(
           table-row-border-style
         )} #{use-css-variable(table-row-border-color)};
+
+      td {
+        white-space: nowrap;
+      }
 
       &:last-child {
         border: none !important;

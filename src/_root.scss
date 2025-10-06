@@ -48,7 +48,7 @@
   #{generate-css-variable-name(table-row-border-style)}: #{$table-row-border-style};
   #{generate-css-variable-name(table-row-border-width)}: #{$table-row-border-width};
   #{generate-css-variable-name(table-row-border-color)}: #{$table-row-border-color};
-  #{generate-css-variable-name(table-margin-x)}: 0;
+  #{generate-css-variable-name(table-margin-x)}: 0; 
   #{generate-css-variable-name(table-margin-y)}: #{$table-margin};
   #{generate-css-variable-name(table-cell-padding)}: #{$table-cell-padding};
 
