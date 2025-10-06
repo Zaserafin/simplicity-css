@@ -8,6 +8,10 @@ html {
 
   // Defines the root font size for consistent typography scaling.
   font-size: #{use-css-variable(font-size-root)};
+
+  @if $enable-smooth-behavior {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
