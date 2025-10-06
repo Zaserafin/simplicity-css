@@ -16,9 +16,7 @@ table,
   vertical-align: top;
   width: 100%;
   text-align: left;
-  margin: #{use-css-variable(table-margin-y)} #{use-css-variable(
-      table-margin-x
-    )};
+  margin: #{use-css-variable(table-margin-y)} #{use-css-variable(table-margin-x)};
 
   * {
     text-align: inherit;
