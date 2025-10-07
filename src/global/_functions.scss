@@ -128,8 +128,12 @@
 // Returns: The name of the target breakpoint
 //          or empty string if its smallest breakpoint.
 // ====================================================
-@function get-breakpoint-suffix($name, $breakpoints) {
-  @return if(get-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+@function get-breakpoint-suffix($name, $breakpoints, $first-segment: false) {
+  @return if(
+    get-breakpoint-min($name, $breakpoints) == null,
+    "",
+    if($first-segment == true, "#{$name}-", "-#{$name}")
+  );
 }
 
 // ====================================================

@@ -1,5 +1,6 @@
 @use "sass:map";
 
+// TODO: Revise why is double mapping the breakpoints array
 @each $breakpoint in map.keys($grid-breakpoints) {
   $breakpoint-suffix: get-breakpoint-suffix($breakpoint, $grid-breakpoints);
 
@@ -14,12 +15,21 @@
       @each $index, $value in $values {
         $breakpoint-suffix: get-breakpoint-suffix(
           $breakpoint,
-          $grid-breakpoints
+          $grid-breakpoints,
+          $selector == null
         );
 
-        .#{$selector}#{$breakpoint-suffix}-#{$index} {
-          @each $property in $properties {
-            #{$property}: $value;
+        @if not $selector {
+          .#{$breakpoint-suffix}#{$index} {
+            @each $property in $properties {
+              #{$property}: $value;
+            }
+          }
+        } @else {
+          .#{$selector}#{$breakpoint-suffix}-#{$index} {
+            @each $property in $properties {
+              #{$property}: $value;
+            }
           }
         }
       }
