@@ -9,7 +9,7 @@ html {
   // Defines the root font size for consistent typography scaling.
   font-size: #{use-css-variable(font-size-root)};
 
-  @if $enable-smooth-behavior {
+  @if $enable-smooth-behavior == true {
     scroll-behavior: smooth;
   }
 }
@@ -43,7 +43,7 @@ body {
     )};
 
   // Toggles text selection based on the configuration to prevent unwanted behavior.
-  @if $enable-user-select == false {
+  @if $disable-user-select == true {
     user-select: none !important;
   }
 

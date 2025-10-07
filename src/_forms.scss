@@ -1,4 +1,5 @@
 // Form controls
+// TODO: Move all the variables to css :root variables
 // =================================================
 
 select,
@@ -17,15 +18,16 @@ input[type="tel"],
 input[type="text"],
 input[type="url"],
 input[type="week"] {
-  appearance: none;
+  appearance: #{$control-appearance};
+  appearance: #{$control-appearance};
+  appearance: #{$control-appearance};
   background-color: #{$control-bg};
   font-family: inherit;
   font-size: #{$control-font-size};
   color: inherit;
   border: #{$control-border-width} solid #{$control-border-color};
   border-radius: #{$control-border-radius};
-  outline: transparent !important;
-  box-shadow: none;
+  outline: 0;
   box-sizing: inherit;
   height: #{$control-height};
   width: #{$control-width};
@@ -38,7 +40,8 @@ input[type="week"] {
   }
 
   &:focus {
-    border-color: #{$control-focus-border-color};
+    border-color: #{$control-focus-color};
+    box-shadow: #{$control-focus-shadow};
   }
 
   &.invalid {
@@ -122,9 +125,7 @@ input[type="radio"] {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    transition:
-      top 200ms ease,
-      font-size 200ms ease;
+    transition: top 200ms ease, font-size 200ms ease;
   }
 
   input::placeholder {
