@@ -634,6 +634,76 @@
       </section>
     </article>
 
+    <article class="container">
+      <h3>Flex Box Utilities</h3>
+      <hr />
+      <section>
+        <h4>Flex Direction:</h4>
+
+        <h5>Flex Row</h5>
+        <div class="d-flex flex-row mb-3 gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 1</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 2</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 3</div>
+        </div>
+
+        <h5>Flex Row Reverse</h5>
+        <div class="d-flex flex-row-reverse gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 1</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 2</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 3</div>
+        </div>
+
+        <h5>Flex Col</h5>
+        <div class="d-flex flex-col gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 1</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 2</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 3</div>
+        </div>
+
+        <h5>Flex Col Reverse</h5>
+        <div class="d-flex flex-col-reverse gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 1</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 2</div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">Item 3</div>
+        </div>
+      </section>
+
+      <section>
+        <h4>Justify Content:</h4>
+
+        <div class="d-flex justify-content-start mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Start</div>
+        </div>
+
+        <div class="d-flex justify-end mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">End</div>
+        </div>
+
+        <div class="d-flex justify-center mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Center</div>
+        </div>
+
+        <div class="d-flex justify-between mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Between</div>
+        </div>
+
+        <div class="d-flex justify-around mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Around</div>
+        </div>
+
+        <div class="d-flex justify-evenly mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Evenly</div>
+        </div>
+      </section>
+    </article>
+
     <script>
       document.getElementById("toggle-theme").addEventListener("click", () => {
         const theme = document.documentElement.dataset.theme;
