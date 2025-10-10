@@ -156,10 +156,7 @@ $body-bg-color-dark: $dark !default;
 $scrollbar-size: thin;
 
 // Thumb color for scrollbar
-$scrollbar-thumb-color: $primary;
-
-// Background color for scrollbar track
-$scrollbar-bg-color: transparent;
+$scrollbar-color: $primary transparent;
 
 // =================================================
 // Containers
@@ -223,6 +220,7 @@ $floating-show-placeholder: true;
 // Input
 $control-bg: transparent;
 $control-border-width: 0.2rem;
+$control-border-style: solid;
 $control-border-color: $secondary;
 $control-border-radius: 0.6rem;
 $control-font-size: 1.8rem;
@@ -232,6 +230,12 @@ $control-margin: 0 0 1.6rem 0;
 $control-appearance: none;
 $control-focus-color: $primary;
 $control-focus-shadow: 0 0 0 0.4rem rgba($primary, 0.2);
+
+// Range Control
+$control-range-width: 100%;
+$control-range-height: 1.2rem;
+$control-range-thumb-width: 2rem;
+$control-range-thumb-height: 2rem;
 
 // Color Input
 $color-width: 4.6rem;
@@ -255,10 +259,22 @@ $label-font-size: 1.8rem;
 $label-font-weight: 700;
 $label-margin: 0.6rem;
 
+// Floating Label
+$label-still-top: 1rem;
+$label-still-left: 1.6rem;
+$label-floating-transition: top 200ms ease, font-size 200ms ease;
+$label-floating-left: -2.3rem;
+$label-floating-font-size: 1.4rem;
+
 // Fieldset
 $fieldset-border-width: 0;
 $fieldset-padding: 0;
 $fieldset-margin: 0;
+
+// Error
+$error-margin: 0 0 2rem 1.6rem;
+$error-weight: bolder;
+$error-color: $danger;
 
 // =================================================
 // Grid System Variables

@@ -38,9 +38,7 @@ body {
 
   // Ensures all elements have a consistent scrollbar style across the framework.
   scrollbar-width: #{use-css-variable(scrollbar-size)};
-  scrollbar-color: #{use-css-variable(scrollbar-thumb-color)} #{use-css-variable(
-      scrollbar-bg-color
-    )};
+  scrollbar-color: #{use-css-variable(scrollbar-color)};
 
   // Toggles text selection based on the configuration to prevent unwanted behavior.
   @if $disable-user-select == true {

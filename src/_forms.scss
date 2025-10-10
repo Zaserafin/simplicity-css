@@ -1,5 +1,5 @@
 // Form controls
-// TODO: Move all the variables to css :root variables
+// TODO: Add default value to all use-variables
 // =================================================
 
 select,
@@ -19,18 +19,20 @@ input[type="tel"],
 input[type="text"],
 input[type="url"],
 input[type="week"] {
-  appearance: #{$control-appearance};
-  background-color: #{$control-bg};
+  appearance: #{use-css-variable(control-appearance)};
+  background-color: #{use-css-variable(control-bg)};
   font-family: inherit;
-  font-size: #{$control-font-size};
+  font-size: #{use-css-variable(control-font-size)};
   color: inherit;
-  border: #{$control-border-width} solid #{$control-border-color};
-  border-radius: #{$control-border-radius};
+  border-color: #{use-css-variable(control-border-color)};
+  border-width: #{use-css-variable(control-border-width)};
+  border-style: #{use-css-variable(control-border-style)};
+  border-radius: #{use-css-variable(control-border-radius)};
   outline: 0;
   box-sizing: inherit;
-  width: #{$control-width};
-  padding: #{$control-padding};
-  margin: #{$control-margin};
+  width: #{use-css-variable(control-width)};
+  padding: #{use-css-variable(control-padding)};
+  margin: #{use-css-variable(control-margin)};
   letter-spacing: 1px !important;
 
   &::placeholder {
@@ -38,12 +40,12 @@ input[type="week"] {
   }
 
   &:focus {
-    border-color: #{$control-focus-color};
-    box-shadow: #{$control-focus-shadow};
+    border-color: #{use-css-variable(control-focus-color)};
+    box-shadow: #{use-css-variable(control-focus-shadow)};
   }
 
   &.invalid {
-    border-color: #{use-css-variable(danger)};
+    border-color: #{use-css-variable(error-color)};
   }
 
   &.valid {
@@ -57,49 +59,49 @@ input[type="week"] {
 
 .error {
   display: block;
-  margin-bottom: 2rem;
-  margin-left: 1.6rem;
-  color: #{use-css-variable(danger)};
-  font-weight: bolder;
+  margin: #{use-css-variable(error-margin)};
+  color: #{use-css-variable(error-color)};
+  font-weight: #{use-css-variable(error-weight)};
 }
 
 input[type="color"] {
-  width: #{$color-width};
-  padding: 0 #{$color-padding} !important;
+  width: #{use-css-variable(color-width)};
+  padding: 0 #{use-css-variable(color-padding)} !important;
 }
 
 input[type="range"] {
-  width: 100%;
-  height: 1.2rem;
+  width: #{use-css-variable(control-range-width)};
+  height: #{use-css-variable(control-range-height)};
   padding: 0;
-  appearance: none;
+  appearance: #{use-css-variable(control-appearance)};
   outline: none;
-  background-color: #{$control-bg};
-  border: #{$control-border-width} solid #{$control-border-color};
-  border-radius: #{$control-border-radius};
+  background-color: #{use-css-variable(control-bg)};
+  border-color: #{use-css-variable(control-border-color)};
+  border-width: #{use-css-variable(control-border-width)};
+  border-style: #{use-css-variable(control-border-style)};
+  border-radius: #{use-css-variable(control-border-radius)};
 
   &::-webkit-slider-thumb {
-    appearance: none;
-    appearance: none;
-    width: 2rem;
-    height: 2rem;
+    appearance: #{use-css-variable(control-appearance)};
+    width: #{use-css-variable(control-range-thumb-width)};
+    height: #{use-css-variable(control-range-thumb-height)};
     background: #{use-css-variable(primary)} !important;
-    cursor: pointer;
     border-radius: #{$border-radius-infinite};
+    cursor: pointer;
   }
 
   &::-moz-range-thumb {
-    width: 2rem;
-    height: 2rem;
-    background: var(--primary) !important;
-    cursor: pointer;
+    width: #{use-css-variable(control-range-thumb-width)};
+    height: #{use-css-variable(control-range-thumb-height)};
+    background: #{use-css-variable(primary)} !important;
     border-radius: #{$border-radius-infinite};
+    cursor: pointer;
   }
 }
 
 select {
-  background: #{$select-indicator} center right no-repeat;
-  padding-right: #{$select-padding-right};
+  background: #{use-css-variable(select-indicator)} center right no-repeat;
+  padding-right: #{use-css-variable(select-padding-right)};
 
   &[multiple] {
     background: none;
@@ -108,37 +110,37 @@ select {
 }
 
 textarea {
-  min-height: #{$textarea-min-height};
-  max-height: #{$textarea-max-height};
-  resize: #{$textarea-resize} !important;
+  min-height: #{use-css-variable(textarea-min-height)};
+  max-height: #{use-css-variable(textarea-max-height)};
+  resize: #{use-css-variable(textarea-resize)} !important;
 }
 
 .label,
 label,
 legend {
   display: block;
-  font-size: #{$label-font-size};
-  font-weight: #{$label-font-weight};
-  margin-bottom: #{$label-margin};
+  font-size: #{use-css-variable(label-font-size)};
+  font-weight: #{use-css-variable(label-font-weight)};
+  margin-bottom: #{use-css-variable(label-margin)};
 
   &.inline {
     display: inline-block !important;
     font-weight: normal;
-    margin-left: #{$label-margin};
+    margin-left: #{use-css-variable(label-margin)};
   }
 }
 
 fieldset {
-  border-width: #{$fieldset-border-width};
-  padding: #{$fieldset-padding};
-  margin: #{$fieldset-margin};
+  border-width: #{use-css-variable(fieldset-border-width)};
+  padding: #{use-css-variable(fieldset-padding)};
+  margin: #{use-css-variable(fieldset-margin)};
 }
 
 input[type="checkbox"],
 input[type="radio"] {
   display: inline-block;
-  width: #{$checkbox-size};
-  height: #{$checkbox-size};
+  width: #{use-css-variable(checkbox-size)};
+  height: #{use-css-variable(checkbox-size)};
   margin: auto 0;
 }
 
@@ -149,9 +151,9 @@ input[type="radio"] {
 
   label {
     position: absolute;
-    top: 1rem;
-    left: 1.6rem;
-    transition: top 200ms ease, font-size 200ms ease;
+    top: #{use-css-variable(label-still-top)};
+    left: #{use-css-variable(label-still-left)};
+    transition: #{use-css-variable(label-floating-transition)};
   }
 
   input::placeholder {
@@ -168,7 +170,7 @@ input[type="radio"] {
 
   &:has(input:focus) label,
   &:has(input:not(:placeholder-shown)) label {
-    font-size: 1.4rem;
-    top: -2.3rem;
+    font-size: #{use-css-variable(label-floating-font-size)};
+    top: #{use-css-variable(label-floating-left)};
   }
 }
