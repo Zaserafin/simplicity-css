@@ -115,6 +115,24 @@
   #{generate-css-variable-name(table-margin-y)}: #{$table-margin};
   #{generate-css-variable-name(table-cell-padding)}: #{$table-cell-padding};
 
+  // Cards
+  #{generate-css-variable-name(card-border-color)}: #{$card-border-color};
+  #{generate-css-variable-name(card-border-width)}: #{$card-border-width};
+  #{generate-css-variable-name(card-border-style)}: #{$card-border-style};
+  #{generate-css-variable-name(card-border-radius)}: #{$card-border-radius};
+  #{generate-css-variable-name(card-bg)}: #{$card-bg};
+  #{generate-css-variable-name(card-color)}: #{$card-color};
+  #{generate-css-variable-name(card-padding-x)}: #{$card-padding-x};
+  #{generate-css-variable-name(card-padding-y)}: #{$card-padding-y};
+  #{generate-css-variable-name(card-padding)}: #{#{use-css-variable(card-padding-y, $card-padding-y)} #{use-css-variable(card-padding-x, $card-padding-x)}};
+  #{generate-css-variable-name(card-title-margin-x)}: #{$card-title-margin-x};
+  #{generate-css-variable-name(card-title-margin-y)}: #{$card-title-margin-y};
+
+  // # The body border radius is calculated based on the golden ratio
+  #{generate-css-variable-name(card-body-border-radius)}: #{calc(
+      $card-border-radius * 0.618
+    )};
+
   // Shadow Color
   #{generate-css-variable-name(shadow-color)}: #{convert-to-rgb($shadow-color)};
 
@@ -143,6 +161,11 @@
   #{generate-css-variable-name(body-color)}: #{$body-text-color};
   #{generate-css-variable-name(body-background)}: #{$body-bg-color};
 
+  // Links
+  #{generate-css-variable-name(link-color)}: #{$link-color};
+  #{generate-css-variable-name(link-decoration)}: #{$link-decoration};
+  #{generate-css-variable-name(link-space-x)}: #{$link-space-x};
+
   // Loaders background
   #{generate-css-variable-name(loader-background)}: #{$loader-background};
 }
@@ -158,6 +181,11 @@
   #{generate-css-variable-name(table-header-color)}: #{color-contrast(
       $table-header-bg-dark
     )};
+
+  // Cards
+  #{generate-css-variable-name(card-border-color)}: #{$card-border-color-dark};
+  #{generate-css-variable-name(card-bg)}: #{$card-bg-dark};
+  #{generate-css-variable-name(card-color)}: #{$card-color-dark};
 
   // Close Button
   #{generate-css-variable-name(close-filter)}: invert(1) grayscale(100%)

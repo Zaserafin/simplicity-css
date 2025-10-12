@@ -71,3 +71,12 @@ code,
 pre {
   font-family: #{use-css-variable(font-family-code)};
 }
+
+a {
+  color: #{use-css-variable(link-color, $link-color)};
+  text-decoration: #{use-css-variable(link-decoration, $link-decoration)};
+
+  &+a {
+    margin-left: #{use-css-variable(link-space-x, $link-space-x)};
+  }
+}

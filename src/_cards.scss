@@ -1,0 +1,47 @@
+// ====================================================
+// Card Styles
+// Description: Defines the default card styles.
+// ====================================================
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #{use-css-variable(card-bg, $card-bg)};
+  color: #{use-css-variable(card-color, $card-color)};
+  border-color: #{use-css-variable(card-border-color, $card-border-color)};
+  border-width: #{use-css-variable(card-border-width, $card-border-width)};
+  border-style: #{use-css-variable(card-border-style, $card-border-style)};
+  border-radius: #{use-css-variable(card-border-radius, $card-border-radius)};
+  padding: #{use-css-variable(card-padding, null)};
+
+  .title {
+    margin-bottom: #{use-css-variable(card-title-margin-y, $card-title-margin-y)};
+  }
+
+  .subtitle {
+    margin-top: calc(
+      -0.5 * #{use-css-variable(card-title-margin-y, $card-title-margin-y)}
+    );
+    margin-bottom: 0;
+  }
+
+  // ====================================================
+  // Generate Button Variants for Each Color
+  // ====================================================
+  @each $color, $value in $colors {
+    &.#{$color} {
+      // Generate CSS variables for default, hover, and disabled states
+
+      background-color: rgba(
+        #{use-css-variable(#{$color}-rgb)},
+        #{use-css-variable(bg-opacity, 1)}
+      );
+      border-color: #{use-css-variable(#{$color}-bg, $value)};
+
+      a {
+        color: #{use-css-variable(#{$color}-color, color-contrast($value))};
+      }
+    }
+  }
+}

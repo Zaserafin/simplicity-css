@@ -277,6 +277,14 @@ $error-weight: bolder;
 $error-color: $danger;
 
 // =================================================
+// Links Variables
+// =================================================
+
+$link-color: $tertiary;
+$link-decoration: underline;
+$link-space-x: 1.6rem;
+
+// =================================================
 // Grid System Variables
 // Includes the sizing and allowed breakpoints
 // =================================================
@@ -340,6 +348,24 @@ $loader-background-dark: rgb(203 197 191 / 20%);
 
 $shadow-color: #343a40;
 $shadow-color-dark: #f1f1f1;
+
+// =================================================
+// Cards Styling Variables
+// =================================================
+
+$card-border-color: $dark;
+$card-border-width: 0.1rem;
+$card-border-style: solid;
+$card-border-radius: 1rem;
+$card-bg: $light;
+$card-color: $dark;
+$card-padding-x: 1.6rem;
+$card-padding-y: 1.6rem;
+$card-title-margin-x: 0;
+$card-title-margin-y: 0.8rem;
+$card-border-color-dark: $light;
+$card-bg-dark: $dark;
+$card-color-dark: $light;
 
 // =================================================
 // Generic Utilities Variables
