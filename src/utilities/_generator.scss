@@ -18,18 +18,11 @@
           $grid-breakpoints,
           $selector == null
         );
+        $selector-path: if($selector, "#{$selector}-", "");
 
-        @if not $selector {
-          .#{$breakpoint-suffix}#{$index} {
-            @each $property in $properties {
-              #{$property}: $value;
-            }
-          }
-        } @else {
-          .#{$selector}#{$breakpoint-suffix}-#{$index} {
-            @each $property in $properties {
-              #{$property}: $value;
-            }
+        .#{$breakpoint-suffix}#{$selector-path}#{$index} {
+          @each $property in $properties {
+            #{$property}: $value;
           }
         }
       }

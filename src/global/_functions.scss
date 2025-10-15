@@ -132,7 +132,7 @@
   @return if(
     get-breakpoint-min($name, $breakpoints) == null,
     "",
-    if($first-segment == true, "#{$name}-", "-#{$name}")
+    "#{$name}\\:"
   );
 }
 

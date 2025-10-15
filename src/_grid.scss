@@ -24,7 +24,7 @@
 
     @include responsive-content($breakpoint, $grid-breakpoints) {
       @for $i from 1 through $grid-columns {
-        .column#{$breakpoint-suffix}-#{$i} {
+        .#{$breakpoint-suffix}column-#{$i} {
           flex: 0 0 auto;
           width: #{math.percentage(calc($i / $grid-columns))};
         }
