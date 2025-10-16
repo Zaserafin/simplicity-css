@@ -16,8 +16,39 @@
     </style>
   </head>
   <body>
-    <button id="toggle-theme" class="primary m-4">Change theme</button>
-    <article class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0">
+    <header class="min-h-screen flex items-center justify-center text-center">
+      <div class="container flex flex-col">
+        <h1>Simplicity</h1>
+        <p class="text-secondary text-opacity-90">
+          It's Simple, Nothing Less and Nothing More
+        </p>
+
+        <div class="flex items-center justify-center gap-3 mt-4">
+          <button
+            id="toggle-theme"
+            class="btn warning outlined md:shadow-sm lg:shadow-xxl xl:shadow-none"
+          >
+            Change Theme
+          </button>
+
+          <a href="#getting-started" class="btn primary outlined">
+            Getting Started
+          </a>
+
+          <a
+            href="https://github.com/Zaserafin/simplicity-css shadow-md"
+            class="btn secondary outlined"
+          >
+            Check Github
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <article
+      id="getting-started"
+      class="container pt-5 pt-sm-4 pt-md-3 pt-lg-2 pt-xl-1 pt-xxl-0"
+    >
       <h3>Color Utilities:</h3>
       <hr />
       <section>
@@ -60,6 +91,60 @@
           <div class="opacity-20 p-3 bg-primary text-light">20%</div>
           <div class="opacity-10 p-3 bg-primary text-light">10%</div>
           <div class="opacity-0 p-3 bg-primary text-light">0%</div>
+        </div>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Cards:</h3>
+      <hr />
+      <section class="flex flex-col gap-3">
+        <div class="card">
+          <h4 class="title">Titulo de card</h4>
+          <h6 class="subtitle">Subitulo de card</h6>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            quaerat cumque sit mollitia provident dolor explicabo, minima
+            aperiam est repudiandae nihil a ratione? Ad cum facilis, corrupti
+            fuga recusandae provident.
+          </p>
+
+          <div>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Card link</a>
+          </div>
+        </div>
+
+        <div class="card primary bg-opacity-50 text-dark">
+          <h4 class="title">Titulo de card</h4>
+          <h6 class="subtitle">Subitulo de card</h6>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            quaerat cumque sit mollitia provident dolor explicabo, minima
+            aperiam est repudiandae nihil a ratione? Ad cum facilis, corrupti
+            fuga recusandae provident.
+          </p>
+
+          <div>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Card link</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 class="title">Titulo de card</h4>
+          <h6 class="subtitle">Subitulo de card</h6>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+            quaerat cumque sit mollitia provident dolor explicabo, minima
+            aperiam est repudiandae nihil a ratione? Ad cum facilis, corrupti
+            fuga recusandae provident.
+          </p>
+
+          <div>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Card link</a>
+          </div>
         </div>
       </section>
     </article>
@@ -290,7 +375,7 @@
           <span class="sr-only">Loading...</span>
         </div>
 
-        <div class="bars-loader text-dark fast" aria-busy="true">
+        <div class="bars-loader text-dark" aria-busy="true">
           <div></div>
           <div></div>
           <div></div>
@@ -356,16 +441,19 @@
       <section class="row">
         <span
           class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary column-md-8"
-          >Column</span
         >
+          Column
+        </span>
         <span
           class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
-          >Column</span
         >
+          Column
+        </span>
         <span
           class="column bg-quaternary text-light font-bold transform-uppercase p-3 border-2 border-tertiary"
-          >Column</span
         >
+          Column
+        </span>
       </section>
     </article>
 
@@ -400,6 +488,37 @@
               type="number"
               placeholder="Escribe tu mensaje.."
             />
+
+            <label for="ageField">Nacimiento</label>
+            <input
+              id="ageField"
+              type="date"
+              placeholder="Escribe tu mensaje.."
+            />
+
+            <label for="ageField">Cita</label>
+            <input
+              id="ageField"
+              type="time"
+              placeholder="Escribe tu mensaje.."
+            />
+
+            <label for="rangeField">Range</label>
+            <input
+              id="rangeField"
+              type="range"
+              placeholder="Escribe tu mensaje.."
+            />
+
+            <label for="select-test">Test</label>
+            <select id="select-test">
+              <option>Item 1</option>
+              <option>Item 2</option>
+              <option>Item 3</option>
+              <option>Item 4</option>
+              <option>Item 5</option>
+              <option>Item 6</option>
+            </select>
 
             <label for="text-area">Mensaje</label>
             <textarea
@@ -473,6 +592,9 @@
                 <th>Column 2</th>
                 <th>Column 3</th>
                 <th>Column 4</th>
+                <th>Column 4</th>
+                <th>Column 4</th>
+                <th>Column 4</th>
               </tr>
             </thead>
             <tbody>
@@ -481,11 +603,8 @@
                 <td>value 2</td>
                 <td>value 3</td>
                 <td>value 4</td>
-              </tr>
-              <tr>
-                <td>value 1</td>
-                <td>value 2</td>
-                <td>value 3</td>
+                <td>value 4</td>
+                <td>value 4</td>
                 <td>value 4</td>
               </tr>
               <tr>
@@ -493,11 +612,26 @@
                 <td>value 2</td>
                 <td>value 3</td>
                 <td>value 4</td>
+                <td>value 4</td>
+                <td>value 4</td>
+                <td>value 4</td>
               </tr>
               <tr>
                 <td>value 1</td>
                 <td>value 2</td>
                 <td>value 3</td>
+                <td>value 4</td>
+                <td>value 4</td>
+                <td>value 4</td>
+                <td>value 4</td>
+              </tr>
+              <tr>
+                <td>value 1</td>
+                <td>value 2</td>
+                <td>value 3</td>
+                <td>value 4</td>
+                <td>value 4</td>
+                <td>value 4</td>
                 <td>value 4</td>
               </tr>
             </tbody>
@@ -582,6 +716,100 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+    </article>
+
+    <article class="container">
+      <h3>Flex Box Utilities</h3>
+      <hr />
+      <section>
+        <h4>Flex Direction:</h4>
+
+        <h5>Flex Row</h5>
+        <div class="flex flex-row mb-3 gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 1
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 2
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 3
+          </div>
+        </div>
+
+        <h5>Flex Row Reverse</h5>
+        <div class="flex flex-row-reverse gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 1
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 2
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 3
+          </div>
+        </div>
+
+        <h5>Flex Col</h5>
+        <div class="flex flex-col gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 1
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 2
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 3
+          </div>
+        </div>
+
+        <h5>Flex Col Reverse</h5>
+        <div class="flex flex-col-reverse gap-1">
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 1
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 2
+          </div>
+          <div class="p-2 bg-primary font-bold p-3 border-1 border-secondary">
+            Item 3
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h4>Justify Content:</h4>
+
+        <div class="flex justify-content-start mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Start</div>
+        </div>
+
+        <div class="flex justify-end mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">End</div>
+        </div>
+
+        <div class="flex justify-center mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Center</div>
+        </div>
+
+        <div class="flex justify-between mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Between</div>
+        </div>
+
+        <div class="flex justify-around mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Around</div>
+        </div>
+
+        <div class="flex justify-evenly mb-3 bg-secondary gap-1">
+          <div class="p-2 bg-primary font-bold p-3">Justify</div>
+          <div class="p-2 bg-primary font-bold p-3">Evenly</div>
         </div>
       </section>
     </article>
