@@ -343,6 +343,39 @@ $shadow: (
     ),
   ),
 );
+$position: (
+  "position": (
+    properties: position,
+    selector: null,
+    values: (
+      static: static,
+      relative: relative,
+      absolute: absolute,
+      fixed: fixed,
+      sticky: sticky,
+    ),
+  ),
+  "top": (
+    properties: top,
+    selector: top,
+    values: $spacers-with-auto,
+  ),
+  "right": (
+    properties: right,
+    selector: right,
+    values: $spacers-with-auto,
+  ),
+  "bottom": (
+    properties: bottom,
+    selector: bottom,
+    values: $spacers-with-auto,
+  ),
+  "left": (
+    properties: left,
+    selector: left,
+    values: $spacers-with-auto,
+  ),
+);
 $utilities: () !default;
 $utilities: map-merge-multiple(
   $sizing,
@@ -356,5 +389,6 @@ $utilities: map-merge-multiple(
   $margins,
   $utilities,
   $text,
-  $shadow
+  $shadow,
+  $position
 );
