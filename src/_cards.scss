@@ -40,7 +40,7 @@
       border-color: #{use-css-variable(#{$color}-bg, $value)};
 
       a {
-        color: #{use-css-variable(#{$color}-color, color-contrast($value))};
+        color: #{use-css-variable(#{$color}, color-contrast($value))};
       }
     }
   }
