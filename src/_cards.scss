@@ -37,7 +37,10 @@
         #{use-css-variable(#{$color}-rgb)},
         #{use-css-variable(bg-opacity, 1)}
       );
-      border-color: #{use-css-variable(#{$color}-bg, $value)};
+      border-color: rgba(
+        #{use-css-variable(#{$color}-rgb, $value)},
+        #{use-css-variable(border-opacity, 1)}
+      );
 
       a {
         color: #{use-css-variable(#{$color}, color-contrast($value))};

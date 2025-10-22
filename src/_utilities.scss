@@ -46,6 +46,135 @@ $displays: (
     values: $display-values,
   ),
 );
+$grid: (
+  "grid-template-columns": (
+    properties: grid-template-columns,
+    selector: grid-cols,
+    values: $grid-template-columns-values,
+  ),
+  "grid-column": (
+    properties: grid-column,
+    selector: col,
+    values: (
+      auto: auto,
+      span-1: span 1 / span 1,
+      span-2: span 2 / span 2,
+      span-3: span 3 / span 3,
+      span-4: span 4 / span 4,
+      span-5: span 5 / span 5,
+      span-6: span 6 / span 6,
+      span-7: span 7 / span 7,
+      span-8: span 8 / span 8,
+      span-9: span 9 / span 9,
+      span-10: span 10 / span 10,
+      span-11: span 11 / span 11,
+      span-12: span 12 / span 12,
+      span-full: 1 / -1,
+    ),
+  ),
+  "grid-column-start": (
+    properties: grid-column-start,
+    selector: col-start,
+    values: (
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      6: 6,
+      7: 7,
+      8: 8,
+      9: 9,
+      10: 10,
+      11: 11,
+      12: 12,
+      13: 13,
+      auto: auto,
+    ),
+  ),
+  "grid-column-end": (
+    properties: grid-column-end,
+    selector: col-end,
+    values: (
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      6: 6,
+      7: 7,
+      8: 8,
+      9: 9,
+      10: 10,
+      11: 11,
+      12: 12,
+      13: 13,
+      auto: auto,
+    ),
+  ),
+  "grid-template-rows": (
+    properties: grid-template-rows,
+    selector: grid-rows,
+    values: $grid-template-rows-values,
+  ),
+  "grid-row": (
+    properties: grid-row,
+    selector: row,
+    values: (
+      auto: auto,
+      span-1: span 1 / span 1,
+      span-2: span 2 / span 2,
+      span-3: span 3 / span 3,
+      span-4: span 4 / span 4,
+      span-5: span 5 / span 5,
+      span-6: span 6 / span 6,
+      span-full: 1 / -1,
+    ),
+  ),
+  "grid-row-start": (
+    properties: grid-row-start,
+    selector: row-start,
+    values: (
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      6: 6,
+      7: 7,
+      auto: auto,
+    ),
+  ),
+  "grid-row-end": (
+    properties: grid-row-end,
+    selector: row-end,
+    values: (
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      6: 6,
+      7: 7,
+      auto: auto,
+    ),
+  ),
+  "grid-auto-flow": (
+    properties: grid-auto-flow,
+    selector: grid-flow,
+    values: $grid-auto-flow-values,
+  ),
+  "grid-auto-columns": (
+    properties: grid-auto-columns,
+    selector: auto-cols,
+    values: $grid-auto-columns-values,
+  ),
+  "grid-auto-rows": (
+    properties: grid-auto-rows,
+    selector: auto-rows,
+    values: $grid-auto-rows-values,
+  ),
+);
 $flex: (
   "flex": (
     properties: flex,
@@ -193,12 +322,10 @@ $borders: (
     selector: border-s,
     values: $border-values,
   ),
-);
-$border-color: (
-  "border-color": (
-    properties: border-color,
+  "border-style": (
+    properties: border-style,
     selector: border,
-    values: $colors,
+    values: $border-style-values,
   ),
 );
 $paddings: (
@@ -376,6 +503,13 @@ $position: (
     values: $spacers-with-auto,
   ),
 );
+$z-index: (
+  "z-index": (
+    properties: z-index,
+    selector: z,
+    values: $z-indexes,
+  ),
+);
 $utilities: () !default;
 $utilities: map-merge-multiple(
   $sizing,
@@ -384,11 +518,12 @@ $utilities: map-merge-multiple(
   $gap,
   $border-radius,
   $borders,
-  $border-color,
   $paddings,
   $margins,
+  $grid,
   $utilities,
   $text,
   $shadow,
-  $position
+  $position,
+  $z-index
 );

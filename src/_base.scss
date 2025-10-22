@@ -45,7 +45,7 @@ body {
     user-select: none !important;
   }
 
-  border: 0 solid transparent;
+  z-index: 0;
 }
 
 // Ensures images are fluid and scale while preserving aspect ratio.
@@ -76,7 +76,7 @@ a {
   color: #{use-css-variable(link-color, $link-color)};
   text-decoration: #{use-css-variable(link-decoration, $link-decoration)};
 
-  &+a {
+  & + a {
     margin-left: #{use-css-variable(link-space-x, $link-space-x)};
   }
 }

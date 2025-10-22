@@ -9,16 +9,29 @@
 @each $color, $value in $colors {
   // Text Colors
   .text-#{$color} {
-    color: rgba(#{use-css-variable(#{$color}-rgb)}, #{use-css-variable(text-opacity, 1)});
+    color: rgba(
+      #{use-css-variable(#{$color}-rgb)},
+      #{use-css-variable(text-opacity, 1)}
+    );
   }
 
   // Background Colors
   .bg-#{$color} {
-    background-color: rgba(#{use-css-variable(#{$color}-rgb)}, #{use-css-variable(bg-opacity, 1)});
+    background-color: rgba(
+      #{use-css-variable(#{$color}-rgb)},
+      #{use-css-variable(bg-opacity, 1)}
+    );
 
     @if $enable-bg-color-contrast == true {
       color: #{color-contrast($value)};
     }
+  }
+
+  .border-#{$color} {
+    border-color: rgba(
+      #{use-css-variable(#{$color}-rgb)},
+      #{use-css-variable(border-opacity, 1)}
+    );
   }
 }
 
@@ -32,11 +45,24 @@
 
   // Text Opacity
   .text-opacity-#{$opacity} {
-    #{generate-css-variable-name(text-opacity)}: #{use-css-variable(opacity-#{$opacity}, 1)};
+    #{generate-css-variable-name(text-opacity)}: #{use-css-variable(
+        opacity-#{$opacity},
+        1
+      )};
   }
 
   // Background Opacity
   .bg-opacity-#{$opacity} {
-    #{generate-css-variable-name(bg-opacity)}: #{use-css-variable(opacity-#{$opacity}, 1)};
+    #{generate-css-variable-name(bg-opacity)}: #{use-css-variable(
+        opacity-#{$opacity},
+        1
+      )};
+  }
+
+  .border-opacity-#{$opacity} {
+    #{generate-css-variable-name(border-opacity)}: #{use-css-variable(
+        opacity-#{$opacity},
+        1
+      )};
   }
 }
