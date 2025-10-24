@@ -452,6 +452,42 @@ $card-bg-dark: $dark;
 $card-color-dark: $light;
 
 // =================================================
+// Badges Styling Variables
+// =================================================
+
+$badge-padding-x: 0.5rem;
+$badge-padding-y: 0.125rem;
+$badge-gap: 0.25rem;
+$badge-border-width: 1px;
+$badge-border-radius: $border-radius-infinite;
+$badge-font-weight: 600;
+$badge-font-size: 0.75rem;
+$badge-line-height: 1;
+$badge-icon-size: 0.75rem;
+$badge-display: inline-flex;
+$badge-align-items: center;
+$badge-text-transform: none;
+$badge-white-space: nowrap;
+$badge-text-overflow: ellipsis;
+$badge-sizes: (
+  sm: (
+    font-size: 1.2rem,
+    px: 0.6rem,
+    py: 0.25rem,
+  ),
+  md: (
+    font-size: 1.4rem,
+    px: 0.8rem,
+    py: 0.3rem,
+  ),
+  lg: (
+    font-size: 1.6rem,
+    px: 1rem,
+    py: 0.4rem,
+  ),
+);
+
+// =================================================
 // Generic Utilities Variables
 // =================================================
 
