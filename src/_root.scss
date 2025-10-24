@@ -124,7 +124,10 @@
   #{generate-css-variable-name(card-color)}: #{$card-color};
   #{generate-css-variable-name(card-padding-x)}: #{$card-padding-x};
   #{generate-css-variable-name(card-padding-y)}: #{$card-padding-y};
-  #{generate-css-variable-name(card-padding)}: #{#{use-css-variable(card-padding-y, $card-padding-y)} #{use-css-variable(card-padding-x, $card-padding-x)}};
+  #{generate-css-variable-name(card-padding)}: #{#{use-css-variable(
+      card-padding-y,
+      $card-padding-y
+    )} #{use-css-variable(card-padding-x, $card-padding-x)}};
   #{generate-css-variable-name(card-title-margin-x)}: #{$card-title-margin-x};
   #{generate-css-variable-name(card-title-margin-y)}: #{$card-title-margin-y};
 

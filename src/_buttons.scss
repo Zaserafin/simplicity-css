@@ -5,8 +5,7 @@
 // Description: Defines the default button styles.
 // ====================================================
 
-.btn,
-button {
+.btn {
   // Includes the md size variant
   @include generate-button-size("md", map.get($button-sizes, "md"));
 

@@ -19,6 +19,9 @@ $border-radius-infinite: 99999px;
 // Defines the base speed for all animations
 $animation-base-speed: 0.8s;
 
+// Determines if the button element should have the .btn styles
+$extend-button-styles: false;
+
 // Toggle to allow or disable changing text color
 // based on the background color
 // * Only applies to bg utilities
@@ -100,33 +103,21 @@ $display-font-weight: map.get($font-weights, regular);
 // Heading Sizes - More equilibrado
 $heading-sizes: (
   1: map.get($size-scale, 3xl),
-  // 4.4rem
   2: map.get($size-scale, xxl),
-  // 3.6rem
   3: map.get($size-scale, xl),
-  // 3rem
   4: map.get($size-scale, lg),
-  // 2.4rem
   5: map.get($size-scale, md),
-  // 2rem
   6: map.get($size-scale, base),
-  // 1.6rem
 );
 
 // Display Sizes - Más proporcionados
 $display-sizes: (
   1: map.get($size-scale, 6xl),
-  // 8rem
   2: map.get($size-scale, 5xl),
-  // 6.4rem
   3: map.get($size-scale, 4xl),
-  // 5.2rem
   4: map.get($size-scale, 3xl),
-  // 4.4rem
   5: map.get($size-scale, xxl),
-  // 3.6rem
   6: map.get($size-scale, xl),
-  // 3rem
 );
 
 // =================================================
@@ -149,17 +140,19 @@ $opacities: (
 );
 
 // Core color palette
-$primary: #2b9e85;
-$secondary: #546a7b;
-$tertiary: #5da9e9;
-$quaternary: #f7c948;
-$warning: #ff9f1c;
-$danger: #f25f5c;
-$success: #2ec4b6;
-$dark: #1a212b;
-$light: #f7f9fa;
-$black: #0c0c0c;
+$primary: #6dc36d;
+$secondary: #62748a;
+$tertiary: #4fa3e3;
+$quaternary: #f4c542;
+$warning: #f59f00;
+$danger: #e64942;
+$success: #2ab79d;
+$dark: #1b1f24;
+$light: #f8fafc;
+$black: #0f1113;
 $white: #fff;
+$muted: #e9edf2;
+$muted-foreground: #e9edf2;
 
 // Color map for easier access to palette
 $colors: (
@@ -172,6 +165,8 @@ $colors: (
   success: $success,
   dark: $dark,
   light: $light,
+  muted: $muted,
+  muted-foreground: $muted-foreground,
 );
 
 // Default text and background colors
@@ -224,47 +219,38 @@ $container-sizes: (
 $button-sizes: (
   xxs: (
     height: map.get($size-scale, lg),
-    // 2.4rem
     padding: 0.4rem 0.8rem,
     font-size: map.get($size-scale, 2xs),
-    // 1rem
   ),
   xs: (
     height: map.get($size-scale, xl),
-    // 3rem
     padding: 0.6rem 1.2rem,
     font-size: map.get($size-scale, xs),
-    // 1.2rem
   ),
   sm: (
     height: 3.2rem,
     padding: 0.8rem 1.6rem,
     font-size: map.get($size-scale, sm),
-    // 1.4rem
   ),
   md: (
     height: 3.6rem,
     padding: 1rem 2rem,
     font-size: map.get($size-scale, base),
-    // 1.6rem
   ),
   lg: (
     height: 4rem,
     padding: 1.2rem 2.4rem,
     font-size: map.get($size-scale, md),
-    // 2rem
   ),
   xl: (
     height: 4.8rem,
     padding: 1.4rem 2.8rem,
     font-size: map.get($size-scale, lg),
-    // 2.4rem
   ),
   xxl: (
     height: 5.6rem,
     padding: 1.6rem 3.2rem,
     font-size: map.get($size-scale, xl),
-    // 3rem
   ),
 );
 
@@ -444,8 +430,8 @@ $loader-background-dark: rgba($primary, 0.12);
 // Shadow variables
 // =================================================
 
-$shadow-color: rgb(15 20 25 / 15%);
-$shadow-color-dark: rgb(240 240 240 / 10%);
+$shadow-color: #0f1419;
+$shadow-color-dark: #f0f0f0;
 
 // =================================================
 // Cards Styling Variables
